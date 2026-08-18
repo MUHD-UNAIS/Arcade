@@ -1,0 +1,14 @@
+<svg viewBox="0 0 100 150" xmlns="http://www.w3.org/2000/svg">
+  <!-- Head -->
+  <path d="M50 35 c-10 0 -18 -8 -18 -18 s8 -18 18 -18 s18 8 18 18 s-8 18 -18 18 Z" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" />
+  <!-- Body -->
+  <path d="M50 35 l0 60" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" />
+  <!-- Arms (Waving or friendly posture) -->
+  <path d="M50 45 c-15 0 -25 -5 -30 -15" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" />
+  <circle cx="16" cy="25" r="3" fill="currentColor" />
+  <path d="M50 45 c15 5 25 15 30 25" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" />
+  <circle cx="84" cy="75" r="3" fill="currentColor" />
+  <!-- Legs -->
+  <path d="M50 95 l-15 40" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" />
+  <path d="M50 95 l15 40" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" />
+</svg>
