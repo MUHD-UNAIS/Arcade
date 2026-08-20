@@ -1,0 +1,14 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Card Base -->
+  <rect x="10" y="10" width="180" height="180" rx="30" fill="white" stroke="#AFB42B" stroke-width="4" />
+  <!-- Disgust Face -->
+  <circle cx="100" cy="100" r="70" fill="#AFB42B" />
+  <!-- Eyes (Uneven squint) -->
+  <circle cx="80" cy="95" r="10" fill="white" />
+  <circle cx="120" cy="95" r="15" fill="white" />
+  <!-- Pupils -->
+  <circle cx="80" cy="95" r="4" fill="#AFB42B" />
+  <circle cx="120" cy="95" r="6" fill="#AFB42B" />
+  <!-- Yucky Mouth -->
+  <path d="M75 145 Q90 130 110 145 T135 135" stroke="white" stroke-width="10" stroke-linecap="round" fill="none" />
+</svg>

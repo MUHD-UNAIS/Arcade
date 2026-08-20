@@ -1,0 +1,31 @@
+import React from 'react';
+
+const GAME_PATHS = {
+  words_of_wisdom: '/src/games/Words-of-Wisdom/index.html',
+  little_big_feelings: '/src/games/Little-Big-Feelings/index.html',
+  mindscape_defense: '/src/games/mindscape-defence/index.html',
+};
+
+export function EmbeddedGame({ gameId, title, onBackToArcade }) {
+  const gamePath = GAME_PATHS[gameId];
+
+  if (!gamePath) return null;
+
+  return (
+    <div className="fixed inset-0 z-20 bg-slate-950">
+      <button
+        type="button"
+        onClick={onBackToArcade}
+        className="fixed top-3 left-3 z-[10000] rounded-xl bg-white/90 px-3 py-2 text-xs font-bold text-slate-800 shadow-lg transition hover:bg-white"
+      >
+        Back to Arcade
+      </button>
+      <iframe
+        title={title}
+        src={gamePath}
+        className="h-full w-full border-0"
+        allow="autoplay; fullscreen"
+      />
+    </div>
+  );
+}

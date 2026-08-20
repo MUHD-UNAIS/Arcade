@@ -1,0 +1,46 @@
+<svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
+    <!-- Tiny Baby Owl (Avatar 10 style) -->
+    <!-- Small Round Body -->
+    <path d="M50 110 Q35 110 30 95 Q30 80 50 80 Q70 80 70 95 Q70 110 50 110 Z" fill="#A1887F" />
+    <path d="M50 110 Q42 110 40 100 Q40 90 50 90 Q60 90 60 100 Q60 110 50 110 Z" fill="white" opacity="0.4" /> <!-- belly -->
+    <!-- Tiny Tufts -->
+    <path d="M40 35 L45 42 L35 45 Z" fill="#A1887F" />
+    <path d="M60 35 L55 42 L65 45 Z" fill="#A1887F" />
+    <style>
+        .owl-pupil { animation: owl-move 7s infinite; }
+        .owl-eye { animation: owl-blink 5s infinite; transform-origin: 50% 62px; }
+        @keyframes owl-move {
+            0%, 40%, 100% { transform: translate(0, 0); }
+            45%, 55% { transform: translate(2px, 1px); }
+            60%, 70% { transform: translate(-2px, -1px); }
+            75%, 85% { transform: translate(0, -2px); }
+        }
+        @keyframes owl-blink {
+            0%, 94%, 100% { transform: scaleY(1); }
+            97% { transform: scaleY(0.1); }
+        }
+    </style>
+
+    <!-- Head -->
+    <circle cx="50" cy="65" r="30" fill="#A1887F" />
+    <g class="owl-eye">
+        <!-- Giant Sparkly Eyes (Owl Signature) -->
+        <circle cx="42" cy="62" r="10" fill="white" />
+        <circle cx="58" cy="62" r="10" fill="white" />
+        <!-- Pupils -->
+        <g class="owl-pupil">
+            <circle cx="42" cy="62" r="5" fill="#212121" />
+            <circle cx="58" cy="62" r="5" fill="#212121" />
+            <circle cx="44" cy="60" r="2.5" fill="white" />
+            <circle cx="60" cy="60" r="2.5" fill="white" />
+        </g>
+    </g>
+    <!-- Tiny Beak -->
+    <path d="M48 68 L52 68 L50 72 Z" fill="#FFB300" />
+    <!-- Little Wings -->
+    <path d="M30 85 Q15 75 25 105" fill="none" stroke="#795548" stroke-width="4" stroke-linecap="round" />
+    <path d="M70 85 Q85 75 75 105" fill="none" stroke="#795548" stroke-width="4" stroke-linecap="round" />
+    <!-- 2 Little Claws -->
+    <circle cx="40" cy="112" r="5" fill="#FFB300" />
+    <circle cx="60" cy="112" r="5" fill="#FFB300" />
+</svg>

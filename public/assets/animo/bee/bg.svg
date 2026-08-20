@@ -1,0 +1,50 @@
+<svg viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg">
+    <!-- Sunny Flower Garden (Bee Home) -->
+    <rect width="1000" height="1000" fill="#E1F5FE" />
+    
+    <style>
+        .flower-sway { animation: flower-sway 8s infinite ease-in-out; transform-origin: center 1000px; }
+        .flower-sway:nth-child(2) { animation-delay: 1.5s; }
+        @keyframes flower-sway {
+            0%, 100% { transform: rotate(-2deg); }
+            50% { transform: rotate(2deg); }
+        }
+        .sun-pulse { animation: sun-pulse 10s infinite alternate ease-in-out; transform-origin: 850px 150px; }
+        @keyframes sun-pulse {
+            from { transform: scale(1); opacity: 0.3; }
+            to { transform: scale(1.2); opacity: 0.5; }
+        }
+        .pollen-float { animation: pollen-float 12s infinite linear; }
+        @keyframes pollen-float {
+            0% { transform: translate(0, 0); }
+            50% { transform: translate(100px, -50px); }
+            100% { transform: translate(0, 0); }
+        }
+    </style>
+
+    <!-- Large Radiant Sun (Cuter) -->
+    <circle class="sun-pulse" cx="850" cy="150" r="300" fill="#FFEE58" filter="blur(60px)" />
+    <circle cx="850" cy="150" r="100" fill="#FFEE58" opacity="0.8" />
+    
+    <!-- Rolling Green Garden Hills -->
+    <path d="M-100 850 Q300 750 600 780 T1100 850" fill="#C8E6C9" opacity="0.8" />
+    <path d="M-200 950 Q400 800 750 880 T1200 1000" fill="#A1887F" opacity="0.2" /> <!-- soil -->
+    
+    <!-- Giant Glowing Red Flower -->
+    <g class="flower-sway">
+        <circle cx="200" cy="700" r="150" fill="#EF5350" opacity="0.6" />
+        <circle cx="200" cy="700" r="40" fill="#FDD835" />
+        <path d="M200 700 L200 1000" stroke="#43A047" stroke-width="20" stroke-linecap="round" />
+    </g>
+    
+    <!-- Large Blue Flower -->
+    <g class="flower-sway">
+        <circle cx="750" cy="800" r="120" fill="#42A5F5" opacity="0.6" />
+        <circle cx="750" cy="800" r="30" fill="#FFF176" />
+        <path d="M750 800 L750 1000" stroke="#43A047" stroke-width="15" stroke-linecap="round" />
+    </g>
+    
+    <!-- Floating Pollen (Sparkles) -->
+    <circle class="pollen-float" cx="450" cy="300" r="10" fill="gold" opacity="0.4" />
+    <circle class="pollen-float" cx="150" cy="150" r="8" fill="gold" opacity="0.3" />
+</svg>

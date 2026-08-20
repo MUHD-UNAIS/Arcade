@@ -1,0 +1,33 @@
+<svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
+    <!-- Tiny Baby Rabbit (Avatar 8 style) -->
+    <!-- Small Round Body -->
+    <path d="M50 110 Q35 110 30 95 Q30 80 50 80 Q70 80 70 95 Q70 110 50 110 Z" fill="white" stroke="#F8BBD0" stroke-width="2" />
+    <path d="M50 110 Q42 110 40 100 Q40 90 50 90 Q60 90 60 100 Q60 110 50 110 Z" fill="#FCE4EC" opacity="0.4" /> <!-- belly -->
+    <!-- Tiny Ears -->
+    <ellipse cx="40" cy="55" rx="4" ry="12" fill="#FCE4EC" stroke="#F06292" stroke-width="1.5" />
+    <ellipse cx="60" cy="55" rx="4" ry="12" fill="#FCE4EC" stroke="#F06292" stroke-width="1.5" />
+    <style>
+        .eye-blink { animation: blink 5s infinite; transform-origin: 50% 65px; }
+        @keyframes blink {
+            0%, 94%, 100% { transform: scaleY(1); }
+            97% { transform: scaleY(0.1); }
+        }
+    </style>
+
+    <!-- Head -->
+    <circle cx="50" cy="70" r="26" fill="white" stroke="#F8BBD0" stroke-width="1.5" />
+    <!-- Eyes (Blinking) -->
+    <g class="eye-blink">
+        <circle cx="42" cy="65" r="5" fill="#212121" />
+        <circle cx="58" cy="65" r="5" fill="#212121" />
+        <circle cx="44" cy="63" r="2" fill="white" />
+        <circle cx="60" cy="63" r="2" fill="white" />
+    </g>
+    <!-- Tiny Pink Nose -->
+    <path d="M48 70 L52 70 L50 73 Z" fill="#F06292" />
+    <!-- 4 Little Paws -->
+    <circle cx="35" cy="112" r="8" fill="white" stroke="#F8BBD0" stroke-width="1.5" />
+    <circle cx="65" cy="112" r="8" fill="white" stroke="#F8BBD0" stroke-width="1.5" />
+    <circle cx="25" cy="95" r="7" fill="white" stroke="#F8BBD0" stroke-width="1.5" />
+    <circle cx="75" cy="95" r="7" fill="white" stroke="#F8BBD0" stroke-width="1.5" />
+</svg>

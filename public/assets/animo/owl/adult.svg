@@ -1,0 +1,57 @@
+<svg viewBox="0 0 100 160" xmlns="http://www.w3.org/2000/svg">
+    <!-- Majestic Adult Owl (Avatar 10 style with body) -->
+    <!-- Large Rounded Body -->
+    <rect x="25" y="80" width="50" height="70" rx="25" fill="#A1887F" stroke="#795548" stroke-width="3" />
+    <ellipse cx="50" cy="120" rx="20" ry="25" fill="white" opacity="0.4" /> <!-- belly -->
+    
+    <!-- Large Tufts Overhead (Based on Avatar 10) -->
+    <path d="M20 30 L50 15 L80 30" fill="none" stroke="#795548" stroke-width="8" stroke-linecap="round" />
+    <style>
+        .owl-pupil { animation: owl-move 6s infinite; }
+        .owl-eye { animation: owl-blink 5s infinite; transform-origin: 50% 45px; }
+        @keyframes owl-move {
+            0%, 40%, 100% { transform: translate(0, 0); }
+            45%, 55% { transform: translate(3px, 1px); }
+            60%, 70% { transform: translate(-3px, -1px); }
+            75%, 85% { transform: translate(0, -2px); }
+        }
+        @keyframes owl-blink {
+            0%, 94%, 100% { transform: scaleY(1); }
+            97% { transform: scaleY(0.1); }
+        }
+        .wing-flap-l { animation: flap-l 4s infinite ease-in-out; transform-origin: 25px 80px; }
+        .wing-flap-r { animation: flap-r 4s infinite ease-in-out; transform-origin: 75px 80px; }
+        @keyframes flap-l {
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(-5deg); }
+        }
+        @keyframes flap-r {
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(5deg); }
+        }
+    </style>
+
+    <!-- Head (Based on Avatar 10) -->
+    <circle cx="50" cy="55" r="40" fill="#A1887F" />
+    
+    <g class="owl-eye">
+        <!-- Eye circles (Based on Avatar 10) -->
+        <circle cx="35" cy="45" r="15" fill="white" />
+        <circle cx="65" cy="45" r="15" fill="white" />
+        <!-- Pupils -->
+        <g class="owl-pupil">
+            <circle cx="35" cy="45" r="7" fill="#212121" />
+            <circle cx="65" cy="45" r="7" fill="#212121" />
+        </g>
+    </g>
+    <!-- Beak -->
+    <path d="M47 55 L53 55 L50 62 Z" fill="#FFB300" />
+    
+    <!-- Large Wings (Overhead) -->
+    <path class="wing-flap-l" d="M25 80 Q-20 40 10 120" fill="#A1887F" stroke="#795548" stroke-width="4" stroke-linecap="round" />
+    <path class="wing-flap-r" d="M75 80 Q120 40 90 120" fill="#A1887F" stroke="#795548" stroke-width="4" stroke-linecap="round" />
+    
+    <!-- Sturdy Golden Claws -->
+    <circle cx="35" cy="150" r="10" fill="#FFB300" stroke="#795548" stroke-width="2" />
+    <circle cx="65" cy="150" r="10" fill="#FFB300" stroke="#795548" stroke-width="2" />
+</svg>

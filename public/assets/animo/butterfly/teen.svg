@@ -1,0 +1,44 @@
+<svg viewBox="0 0 100 130" xmlns="http://www.w3.org/2000/svg">
+    <!-- Playful Teen Butterfly (Avatar 12 style with body) -->
+    <!-- Medium Body -->
+    <rect x="42" y="65" width="16" height="55" rx="8" fill="#4A148C" stroke="#9C27B0" stroke-width="2" />
+    <style>
+        .wing-left { animation: flap-left 0.6s ease-in-out infinite; transform-origin: 50px 85px; }
+        .wing-right { animation: flap-right 0.6s ease-in-out infinite; transform-origin: 50px 85px; }
+        @keyframes flap-left {
+            0%, 100% { transform: rotateY(0deg); }
+            50% { transform: rotateY(45deg); }
+        }
+        @keyframes flap-right {
+            0%, 100% { transform: rotateY(0deg); }
+            50% { transform: rotateY(-45deg); }
+        }
+        .eye-blink { animation: blink 5s infinite; transform-origin: 50% 45px; }
+        @keyframes blink {
+            0%, 94%, 100% { transform: scaleY(1); }
+            97% { transform: scaleY(0.1); }
+        }
+    </style>
+
+    <!-- Growing Wings (Intermediate) -->
+    <g class="wing-left">
+        <path d="M42 90 Q15 65 30 45 Q50 65 42 90" fill="#E1BEE7" stroke="#9C27B0" stroke-width="2" />
+        <path d="M42 95 Q25 115 35 125 Q50 115 42 95" fill="#F3E5F5" stroke="#9C27B0" stroke-width="1.5" />
+    </g>
+    <g class="wing-right">
+        <path d="M58 90 Q85 65 70 45 Q50 65 58 90" fill="#E1BEE7" stroke="#9C27B0" stroke-width="2" />
+        <path d="M58 95 Q75 115 65 125 Q50 115 58 95" fill="#F3E5F5" stroke="#9C27B0" stroke-width="1.5" />
+    </g>
+    <!-- Head -->
+    <circle cx="50" cy="50" r="32" fill="#F3E5F5" stroke="#9C27B0" stroke-width="2" />
+    <!-- Eyes (Blinking) -->
+    <g class="eye-blink">
+        <circle cx="42" cy="45" r="4.5" fill="#4A148C" />
+        <circle cx="58" cy="45" r="4.5" fill="#4A148C" />
+        <circle cx="44" cy="43" r="2" fill="white" />
+        <circle cx="60" cy="43" r="2" fill="white" />
+    </g>
+    <path d="M46 58 Q50 63 54 58" fill="none" stroke="#9C27B0" stroke-width="1.5" stroke-linecap="round" />
+    <!-- Growing Antennae -->
+    <path d="M48 30 Q35 10 30 15 M52 30 Q65 10 70 15" stroke="#4A148C" stroke-width="2" fill="none" stroke-linecap="round" />
+</svg>

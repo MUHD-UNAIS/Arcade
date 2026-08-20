@@ -1,0 +1,39 @@
+<svg viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg">
+    <!-- Bamboo Forest (Panda Home) -->
+    <rect width="1000" height="1000" fill="#F1F8E9" />
+    
+    <style>
+        .bamboo-sway { animation: sway 8s infinite ease-in-out; transform-origin: 500px -100px; }
+        @keyframes sway {
+            0%, 100% { transform: rotate(-1deg); }
+            50% { transform: rotate(1deg); }
+        }
+        .sun-drift { animation: drift 12s infinite alternate ease-in-out; }
+        @keyframes drift {
+            from { transform: translateX(-30px); opacity: 0.1; }
+            to { transform: translateX(30px); opacity: 0.2; }
+        }
+    </style>
+
+    <!-- Bamboo Stalks (Cuter) -->
+    <g class="bamboo-sway">
+        <rect x="100" y="0" width="30" height="1000" fill="#81C784" rx="15" />
+        <rect x="50" y="200" width="40" height="10" fill="#388E3C" />
+        <rect x="50" y="400" width="40" height="10" fill="#388E3C" />
+        
+        <rect x="800" y="0" width="35" height="1000" fill="#81C784" rx="17" />
+        <rect x="780" y="300" width="45" height="12" fill="#388E3C" />
+        <rect x="780" y="600" width="45" height="12" fill="#388E3C" />
+        
+        <!-- Large Bamboo Leaves -->
+        <path d="M130 300 Q250 200 150 400" fill="#2E7D32" opacity="0.6" />
+        <path d="M800 500 Q700 400 850 600" fill="#2E7D32" opacity="0.6" />
+    </g>
+    
+    <!-- Soft Sunlight Glow -->
+    <circle class="sun-drift" cx="500" cy="100" r="300" fill="#FFEE58" filter="blur(60px)" />
+    
+    <!-- Rolling Green Moss Hills -->
+    <path d="M-100 900 Q300 800 600 850 T1100 900" fill="#A5D6A7" opacity="0.8" />
+    <path d="M-200 1000 Q400 850 700 950 T1200 1000" fill="#66BB6A" />
+</svg>

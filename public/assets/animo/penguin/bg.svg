@@ -1,0 +1,40 @@
+<svg viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg">
+    <!-- Arctic Iceberg (Penguin Home) -->
+    <rect width="1000" height="1000" fill="#E1F5FE" />
+    
+    <!-- Iceberg Layers -->
+    <path d="M-100 800 L400 400 L600 800 T1100 800" fill="#B3E5FC" opacity="0.6" />
+    <path d="M-200 950 L500 500 L800 950 T1200 950" fill="white" stroke="#B3E5FC" stroke-width="5" />
+    
+    <style>
+        .snow-float { animation: snow 10s infinite linear; }
+        @keyframes snow {
+            from { transform: translateY(-50px); opacity: 0; }
+            50% { opacity: 0.5; }
+            to { transform: translateY(50px); opacity: 0; }
+        }
+        .aurora-pulse { animation: aurora 10s infinite alternate ease-in-out; transform-origin: center; }
+        @keyframes aurora {
+            from { opacity: 0.1; transform: scaleX(0.9) skewX(-5deg); }
+            to { opacity: 0.3; transform: scaleX(1.1) skewX(5deg); }
+        }
+        .ocean-ripple { animation: ocean 6s infinite alternate ease-in-out; }
+        @keyframes ocean {
+            from { transform: translateY(0); }
+            to { transform: translateY(10px); }
+        }
+    </style>
+
+    <!-- Deep Arctic Ocean -->
+    <g class="ocean-ripple">
+        <rect y="850" width="1000" height="150" fill="#0288D1" />
+        <path d="M0 850 Q250 820 500 850 T1000 850" fill="#0288D1" />
+    </g>
+    
+    <!-- Floating Snowflakes -->
+    <circle class="snow-float" cx="200" cy="200" r="10" fill="white" opacity="0.4" />
+    <circle class="snow-float" cx="800" cy="300" r="15" fill="white" opacity="0.3" style="animation-delay: -5s" />
+    
+    <!-- Northern Lights (Soft Glow) -->
+    <path class="aurora-pulse" d="M0 100 Q500 50 1000 100" stroke="#B2FF59" stroke-width="60" stroke-linecap="round" fill="none" filter="blur(40px)" />
+</svg>

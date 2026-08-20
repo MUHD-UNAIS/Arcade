@@ -1,0 +1,26 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1920" height="1080" fill="#FFF5F9"/>
+  <!-- Large soft blobs -->
+  <circle cx="200" cy="200" r="420" fill="#E0F7FA" opacity="0.55"/>
+  <circle cx="1700" cy="880" r="520" fill="#FCE4EC" opacity="0.55"/>
+  <circle cx="960" cy="540" r="300" fill="#F3E5F5" opacity="0.35"/>
+  <circle cx="1600" cy="150" r="280" fill="#FFFDE7" opacity="0.6"/>
+  <circle cx="100" cy="900" r="260" fill="#E8F5E9" opacity="0.6"/>
+  <!-- Wavy stripes -->
+  <path d="M-100 600 Q300 500 600 620 Q900 740 1200 620 Q1500 500 1920 640" stroke="#B2EBF2" stroke-width="50" stroke-linecap="round" fill="none" opacity="0.4"/>
+  <path d="M-100 300 Q400 200 700 320 Q1000 440 1300 300 Q1600 160 1920 280" stroke="#FFF9C4" stroke-width="70" stroke-linecap="round" fill="none" opacity="0.35"/>
+  <!-- Stars -->
+  <g fill="#FFD54F">
+    <polygon points="80,50 90,80 120,80 96,98 106,128 80,110 54,128 64,98 40,80 70,80" transform="scale(0.9)"/>
+    <polygon points="1820,100 1830,130 1860,130 1836,148 1846,178 1820,160 1794,178 1804,148 1780,130 1810,130" transform="scale(0.7)"/>
+    <polygon points="400,900 408,924 434,924 414,938 422,962 400,948 378,962 386,938 366,924 392,924" transform="scale(0.6)"/>
+    <polygon points="1500,800 1508,824 1534,824 1514,838 1522,862 1500,848 1478,862 1486,838 1466,824 1492,824" transform="scale(0.65)"/>
+    <polygon points="960,80 968,104 994,104 974,118 982,142 960,128 938,142 946,118 926,104 952,104" transform="scale(0.75)"/>
+  </g>
+  <!-- Small colorful dots -->
+  <circle cx="300" cy="700" r="18" fill="#F48FB1" opacity="0.7"/>
+  <circle cx="1600" cy="400" r="22" fill="#80DEEA" opacity="0.7"/>
+  <circle cx="700" cy="150" r="15" fill="#A5D6A7" opacity="0.7"/>
+  <circle cx="1200" cy="950" r="20" fill="#FFCC80" opacity="0.7"/>
+  <circle cx="1800" cy="550" r="16" fill="#CE93D8" opacity="0.7"/>
+</svg>

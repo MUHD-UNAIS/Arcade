@@ -1,0 +1,5 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <rect x="10" y="10" width="180" height="180" rx="30" fill="white" stroke="#FF5252" stroke-width="4" />
+  <path d="M40 80 Q100 20 160 80 Q160 140 100 140 Q40 140 40 80" fill="#FFCDD2" />
+  <text x="50" y="85" font-family="Arial" font-size="12" fill="#D32F2F">Someone is mean</text> 
+</svg>

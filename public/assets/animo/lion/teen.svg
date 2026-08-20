@@ -1,0 +1,41 @@
+<svg viewBox="0 0 100 130" xmlns="http://www.w3.org/2000/svg">
+    <!-- Playful Teen Lion (Avatar 1 style with body) -->
+    <!-- Medium Body -->
+    <path d="M50 120 Q30 120 30 95 L30 75 Q30 60 50 60 Q70 60 70 75 L70 95 Q70 120 50 120 Z" fill="#FFD54F" stroke="#F57C00" stroke-width="2" />
+    <!-- Fluffy Mane -->
+    <path d="M50 10 Q70 15 85 35 Q100 60 85 85 Q70 105 50 110 Q30 105 15 85 Q0 60 15 35 Q30 15 50 10" fill="#F57C00" />
+    <style>
+        .eye-blink { animation: blink 5s infinite; transform-origin: 50% 50px; }
+        @keyframes blink {
+            0%, 94%, 100% { transform: scaleY(1); }
+            97% { transform: scaleY(0.1); }
+        }
+        .tail-wag { animation: wag 4.5s infinite ease-in-out; transform-origin: 75px 110px; }
+        @keyframes wag {
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(12deg); }
+        }
+    </style>
+
+    <!-- Head -->
+    <circle cx="50" cy="55" r="40" fill="#FFD54F" />
+    <!-- Ears -->
+    <circle cx="28" cy="22" r="10" fill="#FFD54F" />
+    <circle cx="72" cy="22" r="10" fill="#FFD54F" />
+    <!-- Eyes (Blinking) -->
+    <g class="eye-blink">
+        <circle cx="38" cy="50" r="5" fill="#3E2723" />
+        <circle cx="62" cy="50" r="5" fill="#3E2723" />
+    </g>
+    <!-- Nose Area -->
+    <ellipse cx="50" cy="65" rx="10" ry="6" fill="#FFF9C4" />
+    <path d="M48 62 L52 62 L50 66 Z" fill="#D81B60" />
+    <!-- Paws -->
+    <circle cx="35" cy="115" r="8" fill="#FFD54F" stroke="#F57C00" stroke-width="1.5" />
+    <circle cx="65" cy="115" r="8" fill="#FFD54F" stroke="#F57C00" stroke-width="1.5" />
+    <!-- Arms -->
+    <circle cx="20" cy="85" r="7" fill="#FFD54F" stroke="#F57C00" stroke-width="1.2" />
+    <circle cx="80" cy="85" r="7" fill="#FFD54F" stroke="#F57C00" stroke-width="1.2" />
+    <!-- Lion Tail -->
+    <path class="tail-wag" d="M75 110 Q90 110 90 95" fill="none" stroke="#F57C00" stroke-width="6" stroke-linecap="round" />
+</svg>

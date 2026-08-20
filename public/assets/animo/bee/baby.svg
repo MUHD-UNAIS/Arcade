@@ -1,0 +1,27 @@
+<svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
+    <!-- Tiny Baby Bee (Avatar 11 style) -->
+    <!-- Small Round Body -->
+    <ellipse cx="50" cy="85" rx="30" ry="25" fill="#FFEB3B" stroke="#212121" stroke-width="1.5" />
+    <!-- Small Stripes -->
+    <path d="M42 65 L42 105 M58 65 L58 105" stroke="#212121" stroke-width="4" />
+    <!-- Small Wings -->
+    <ellipse cx="38" cy="65" rx="10" ry="8" fill="#E1F5FE" opacity="0.6" />
+    <ellipse cx="62" cy="65" rx="10" ry="8" fill="#E1F5FE" opacity="0.6" />
+    <style>
+        .eye-blink { animation: blink 5s infinite; transform-origin: 50% 50px; }
+        @keyframes blink {
+            0%, 94%, 100% { transform: scaleY(1); }
+            97% { transform: scaleY(0.1); }
+        }
+    </style>
+
+    <!-- Head -->
+    <circle cx="50" cy="55" r="28" fill="#FFEB3B" />
+    <!-- Eyes (Blinking) -->
+    <g class="eye-blink">
+        <circle cx="50" cy="50" r="5" fill="#212121" />
+        <circle cx="52" cy="48" r="2" fill="white" />
+    </g>
+    <!-- Tiny Antennae -->
+    <path d="M45 40 Q40 30 35 35 M55 40 Q60 30 65 35" stroke="#212121" stroke-width="1.5" fill="none" />
+</svg>

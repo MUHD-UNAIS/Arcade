@@ -1,0 +1,38 @@
+<svg viewBox="0 0 100 145" xmlns="http://www.w3.org/2000/svg">
+    <!-- Playful Teen Frog (Froglet stage with tail) -->
+    <!-- Medium Body -->
+    <path d="M50 120 Q30 120 30 95 L30 75 Q30 60 50 60 Q70 60 70 75 L70 95 Q70 120 50 120 Z" fill="#A5D6A7" stroke="#1B5E20" stroke-width="2.5" />
+    <path d="M50 120 Q35 120 35 100 Q35 80 50 80 Q65 80 65 100 Q65 120 50 120 Z" fill="#E8F5E9" opacity="0.3" /> <!-- belly -->
+    <style>
+        .eye-blink { animation: blink 5s infinite; transform-origin: 50% 40px; }
+        @keyframes blink {
+            0%, 94%, 100% { transform: scaleY(1); }
+            97% { transform: scaleY(0.1); }
+        }
+        .tail-swimming { animation: swim 3s infinite ease-in-out; transform-origin: 50px 120px; }
+        @keyframes swim {
+            0%, 100% { transform: rotate(-3deg); }
+            50% { transform: rotate(3deg); }
+        }
+    </style>
+
+    <!-- Head -->
+    <ellipse cx="50" cy="55" rx="45" ry="32" fill="#A5D6A7" />
+    <!-- Eyes (Blinking) -->
+    <g class="eye-blink">
+        <circle cx="35" cy="40" r="14" fill="white" />
+        <circle cx="65" cy="40" r="14" fill="white" />
+        <circle cx="35" cy="40" r="6" fill="#1B5E20" />
+        <circle cx="65" cy="40" r="6" fill="#1B5E20" />
+    </g>
+    <!-- Smile Area -->
+    <path d="M30 65 Q50 82 70 65" stroke="#1B5E20" stroke-width="3" fill="none" stroke-linecap="round" />
+    <!-- Small Jumping Legs -->
+    <path d="M25 110 Q10 90 15 120" stroke="#1B5E20" stroke-width="6" stroke-linecap="round" fill="none" />
+    <path d="M75 110 Q90 90 85 120" stroke="#1B5E20" stroke-width="6" stroke-linecap="round" fill="none" />
+    <!-- Paws -->
+    <circle cx="35" cy="122" r="8" fill="#A5D6A7" stroke="#1B5E20" stroke-width="2" />
+    <circle cx="65" cy="122" r="8" fill="#A5D6A7" stroke="#1B5E20" stroke-width="2" />
+    <!-- Disappearing Tail (Froglet) -->
+    <path class="tail-swimming" d="M50 120 Q55 132 50 142 Q45 132 50 120" fill="#81C784" opacity="0.4" stroke="#1B5E20" stroke-width="1" />
+</svg>
