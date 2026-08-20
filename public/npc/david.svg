@@ -1,0 +1,10 @@
+<svg viewBox="0 0 100 150" xmlns="http://www.w3.org/2000/svg">
+  <path d="M50 35 c-9 0 -16 -7 -16 -16 s7 -16 16 -16 s16 7 16 16 s-7 16 -16 16 Z" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" />
+  <path d="M50 35 l-1 55" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" />
+  <path d="M50 37 l-3 8 l3 15 l3 -15 l-3 -8 Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M50 55 c10 0 20 0 25 15" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" />
+  <path d="M75 60 h10 v12 h-10 v-12 c4 0 4 4 4 6 s-4 6 -4 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M49 55 c-5 10 -15 15 -20 30" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" />
+  <path d="M49 90 l-12 40" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" />
+  <path d="M49 90 l15 40" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" />
+</svg>

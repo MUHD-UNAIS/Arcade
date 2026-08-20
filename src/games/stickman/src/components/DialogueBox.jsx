@@ -54,7 +54,7 @@ const DialogueBox = ({ node, onSelectOption, foundClues = [], requiredResource =
                         >
                             <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center p-2 mb-1">
                                 <img
-                                    src={isCorrectResource ? '/stickman_assets/hope_stickman.svg' : '/stickman_assets/shield_stickman.svg'}
+                                    src={isCorrectResource ? '/stickman_assets/hope_stickman.svg' : '/stickman_assets/empty_stickman.svg'}
                                     className="w-full h-full filter brightness-0 invert"
                                     alt=""
                                 />
