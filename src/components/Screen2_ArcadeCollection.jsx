@@ -33,32 +33,6 @@ export function Screen2_ArcadeCollection({ onSelectGame }) {
       )
     },
     {
-      id: 'plush_match',
-      title: 'Plush Match',
-      category: 'Tactile Pairs',
-      tag: 'SOOTHING',
-      badgeColor: 'bg-zen-tealBg text-zen-teal',
-      description: 'Match soothing pairs & unbind your mind with gentle tactile cards.',
-      bgGradient: 'from-[#E7F2F2] to-[#D5E8E8]',
-      borderColor: 'border-zen-teal/40',
-      imageSvg: (
-        <svg className="w-full h-32 object-contain" viewBox="0 0 200 120" fill="none">
-          <rect width="200" height="120" rx="16" fill="#E7F2F2" />
-          <circle cx="75" cy="65" r="22" fill="#76C4C6" />
-          <circle cx="68" cy="60" r="3" fill="#4A353B" />
-          <circle cx="82" cy="60" r="3" fill="#4A353B" />
-          <path d="M72 68C74 70 76 70 78 68" stroke="#4A353B" strokeWidth="2" strokeLinecap="round" />
-
-          <circle cx="125" cy="65" r="22" fill="#F7C5D1" />
-          <circle cx="118" cy="60" r="3" fill="#4A353B" />
-          <circle cx="132" cy="60" r="3" fill="#4A353B" />
-          <path d="M122 68C124 70 126 70 128 68" stroke="#4A353B" strokeWidth="2" strokeLinecap="round" />
-
-          <path d="M100 45 L102 50 L107 52 L102 54 L100 59 L98 54 L93 52 L98 50 Z" fill="#EADF9E" />
-        </svg>
-      )
-    },
-    {
       id: 'stick_man',
       title: 'Stick Man to the Rescue',
       category: 'Physics & Play',
@@ -74,26 +48,6 @@ export function Screen2_ArcadeCollection({ onSelectGame }) {
           <circle cx="100" cy="40" r="10" stroke="#4A353B" strokeWidth="3" fill="#FFF" />
           <path d="M100 50 V 70 M100 58 L 85 65 M100 58 L 115 50 M100 70 L 90 85 M100 70 L 110 85" stroke="#4A353B" strokeWidth="3" strokeLinecap="round" />
           <polygon points="150,35 153,42 160,43 155,48 156,55 150,51 144,55 145,48 140,43 147,42" fill="#EADF9E" stroke="#7A8450" strokeWidth="1" />
-        </svg>
-      )
-    },
-    {
-      id: 'signal_cloud',
-      title: 'Signal Cloud',
-      category: 'Pathway Flow',
-      tag: 'SERENE',
-      badgeColor: 'bg-zen-pinkAccent text-zen-mauve',
-      description: 'Guide signals through soft cloud routes and serene pathways.',
-      bgGradient: 'from-[#FFF0F3] to-[#FCDAE2]',
-      borderColor: 'border-zen-pinkAccent',
-      imageSvg: (
-        <svg className="w-full h-32 object-contain" viewBox="0 0 200 120" fill="none">
-          <rect width="200" height="120" rx="16" fill="#FFF0F3" />
-          <path d="M30 60 Q 60 20 100 60 T 170 60" stroke="#A86B79" strokeWidth="4" strokeDasharray="6 6" fill="none" />
-          <circle cx="60" cy="38" r="14" fill="#FFFFFF" stroke="#F7C5D1" strokeWidth="2" />
-          <circle cx="100" cy="60" r="16" fill="#FCEBEF" stroke="#A86B79" strokeWidth="2" />
-          <circle cx="140" cy="38" r="14" fill="#FFFFFF" stroke="#F7C5D1" strokeWidth="2" />
-          <polygon points="100,53 103,58 108,60 103,62 100,67 97,62 92,60 97,58" fill="#EADF9E" />
         </svg>
       )
     },

@@ -33,8 +33,6 @@ export function Navbar({
     if (currentView === 'words_of_wisdom') return 'Words of Wisdom';
     if (currentView === 'little_big_feelings') return 'Little Big Feelings';
     if (currentView === 'stick_man') return 'Stick Man to the Rescue';
-    if (currentView === 'plush_match') return 'Plush Match';
-    if (currentView === 'signal_cloud') return 'Signal Cloud';
     if (currentView === 'mindscape_defense') return 'Mindscape Defense';
     return 'Arcade Collection';
   };

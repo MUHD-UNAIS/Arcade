@@ -4,8 +4,6 @@ import { Screen1_Login } from './components/Screen1_Login';
 import { Screen2_ArcadeCollection } from './components/Screen2_ArcadeCollection';
 import { Screen3_WordsOfWisdom } from './components/Screen3_WordsOfWisdom';
 import { Screen4_LittleBigFeelings } from './components/Screen4_LittleBigFeelings';
-import { Screen_PlushMatch } from './components/Screen_PlushMatch';
-import { Screen_SignalCloud } from './components/Screen_SignalCloud';
 import { Screen_MindscapeDefense } from './components/Screen_MindscapeDefense';
 import { MiniGameModal } from './components/MiniGameModal';
 import { EmbeddedGame } from './components/EmbeddedGame';
@@ -110,16 +108,6 @@ export function App() {
           <Suspense fallback={<div className="min-h-screen bg-slate-950" />}>
             <StickmanGame onExitToArcade={handleGoToArcade} />
           </Suspense>
-        ) : currentView === 'plush_match' ? (
-          <Screen_PlushMatch
-            onBackToArcade={handleGoToArcade}
-            onPlayMiniGame={handlePlayMiniGame}
-          />
-        ) : currentView === 'signal_cloud' ? (
-          <Screen_SignalCloud
-            onBackToArcade={handleGoToArcade}
-            onPlayMiniGame={handlePlayMiniGame}
-          />
         ) : currentView === 'mindscape_defense' ? (
           <EmbeddedGame gameId="mindscape_defense" title="Mindscape Defense" onBackToArcade={handleGoToArcade} />
         ) : currentView === 'feeling_fusion' ? (
