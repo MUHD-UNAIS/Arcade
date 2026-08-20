@@ -26,7 +26,7 @@ import { INNER_THOUGHTS, CLUE_POSITIONS, CLUE_DETAILS, BACKGROUND_NPCS } from '.
 import { audioManager } from './utils/audio';
 import { REAL_RESOURCES } from './data/resources';
 
-const App = () => {
+const StickmanGame = ({ onExitToArcade }) => {
   // Game State
   const [gameState, setGameState] = useState('SPLASH'); // SPLASH, START, NAMING, GENDER_SELECT, LEVEL_SELECT, APPROACH, DIALOGUE, RESOLUTION, HANDOFF, FINAL_SUCCESS, RESOURCES
 
@@ -479,7 +479,11 @@ const App = () => {
     setIsNpcSpeaking(false);
   };
 
-
+  const handleExitToArcade = () => {
+    audioManager.stopMusic();
+    audioManager.stopSpeaking();
+    onExitToArcade?.();
+  };
 
   // NPC Speech Effect
   useEffect(() => {
@@ -523,14 +527,18 @@ const App = () => {
     }
   }, [currentNode, gameState, selectedLevel, isPaused, currentNodeId, seenDialogueNodes]);
 
-  // Wallet Toggle (Only pop up when it's the player's turn to respond AND they have choices)
+  // Wallet Toggle: only open when the current dialogue node actually requires a resource selection.
   useEffect(() => {
-    if (gameState === 'DIALOGUE' && !isNpcSpeaking && !playerLastSaid && currentNode?.required_resource && currentNode?.options?.length > 0) {
-      setIsWalletOpen(true);
-    } else {
-      setIsWalletOpen(false);
-    }
-  }, [currentNode, isNpcSpeaking, gameState, playerLastSaid]);
+    const shouldOpenWallet =
+      gameState === 'DIALOGUE' &&
+      !isNpcSpeaking &&
+      !playerLastSaid &&
+      !!currentNode?.required_resource &&
+      !!currentNode?.options?.length &&
+      !selectedResource;
+
+    setIsWalletOpen(shouldOpenWallet);
+  }, [currentNode, isNpcSpeaking, gameState, playerLastSaid, selectedResource]);
 
   const launchMission = (mission) => {
     setIsTransitioning(true);
@@ -761,7 +769,7 @@ const App = () => {
           <span className="text-[10px] font-bold text-teal-300 uppercase tracking-wider">{gameState === 'APPROACH' ? 'Explore Mode' : 'Conversation Mode'}</span>
         </div>
         <div className="pointer-events-auto mt-2 exit-mission-btn-container flex gap-2">
-          <button onClick={() => { audioManager.stopMusic(); audioManager.stopSpeaking(); setGameState('LEVEL_SELECT'); }} className="px-3 py-1.5 bg-red-500/90 hover:bg-red-600 text-white text-[10px] font-black uppercase tracking-widest rounded-lg shadow-md transition-all border border-red-400/50 backdrop-blur-sm exit-mission-btn">Exit Mission</button>
+          <button onClick={handleExitToArcade} className="px-3 py-1.5 bg-red-500/90 hover:bg-red-600 text-white text-[10px] font-black uppercase tracking-widest rounded-lg shadow-md transition-all border border-red-400/50 backdrop-blur-sm exit-mission-btn">Exit Mission</button>
           <button onClick={() => setIsPaused(!isPaused)} className={`px-3 py-1.5 text-[10px] font-black uppercase tracking-widest rounded-lg shadow-md transition-all border backdrop-blur-sm flex items-center gap-2 ${isPaused ? 'bg-orange-500 text-white border-orange-400' : 'bg-black/40 hover:bg-black/60 text-white border-white/20'}`}>
             <span className="text-xs">{isPaused ? '▶' : '⏸'}</span>
             {isPaused ? 'Resume' : 'Pause'}
@@ -925,4 +933,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default StickmanGame;

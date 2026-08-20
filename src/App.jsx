@@ -4,7 +4,7 @@ import { Screen1_Login } from './components/Screen1_Login';
 import { Screen2_ArcadeCollection } from './components/Screen2_ArcadeCollection';
 import { Screen3_WordsOfWisdom } from './components/Screen3_WordsOfWisdom';
 import { Screen4_LittleBigFeelings } from './components/Screen4_LittleBigFeelings';
-import { Screen5_StickManToRescue } from './components/Screen5_StickManToRescue';
+import StickmanGame from './games/stickman/src/StickmanGame';
 import { Screen_PlushMatch } from './components/Screen_PlushMatch';
 import { Screen_SignalCloud } from './components/Screen_SignalCloud';
 import { Screen_MindscapeDefense } from './components/Screen_MindscapeDefense';
@@ -52,6 +52,7 @@ export function App() {
 
   const handleGoToArcade = () => {
     setCurrentView('arcade');
+    setActiveMiniGame(null);
   };
 
   const handlePlayMiniGame = (game) => {
@@ -116,10 +117,7 @@ export function App() {
             onPlayMiniGame={handlePlayMiniGame}
           />
         ) : currentView === 'stick_man' ? (
-          <Screen5_StickManToRescue
-            onBackToArcade={handleGoToArcade}
-            onPlayMiniGame={handlePlayMiniGame}
-          />
+          <StickmanGame onExitToArcade={handleGoToArcade} />
         ) : currentView === 'plush_match' ? (
           <Screen_PlushMatch
             onBackToArcade={handleGoToArcade}

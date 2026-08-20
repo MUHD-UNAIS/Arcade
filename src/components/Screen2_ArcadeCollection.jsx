@@ -145,7 +145,7 @@ export function Screen2_ArcadeCollection({ onSelectGame }) {
     }
   ];
 
-  const categories = ['All', 'Mindful Puzzles', 'Tactile Pairs', 'Physics & Play', 'Pathway Flow', 'Mood & Feelings'];
+  const categories = ['All', 'Mindful Puzzles', 'Tactile Pairs', 'Physics & Play', 'Pathway Flow', 'Mood & Feelings', 'Relaxed Strategy'];
 
   const filteredGames = games.filter(game => {
     const matchesCategory = selectedCategory === 'All' || game.category === selectedCategory;
