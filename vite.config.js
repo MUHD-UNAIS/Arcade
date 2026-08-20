@@ -7,7 +7,9 @@ function normalizeLittleBigFeelingsAssets() {
     name: 'normalize-little-big-feelings-assets',
     enforce: 'pre',
     transform(code, id) {
-      if (!id.includes(`${resolve(__dirname, 'src/games/Little-Big-Feelings')}`)) {
+      const isLittleBigFeelings = id.includes(`${resolve(__dirname, 'src/games/Little-Big-Feelings')}`)
+      const isFeelingFusion = id.includes(`${resolve(__dirname, 'src/games/Feeling-Fusion')}`)
+      if (!isLittleBigFeelings && !isFeelingFusion) {
         return null
       }
 
@@ -30,6 +32,9 @@ export default defineConfig({
         wordsOfWisdom: resolve(__dirname, 'src/games/Words-of-Wisdom/index.html'),
         littleBigFeelings: resolve(__dirname, 'src/games/Little-Big-Feelings/index.html'),
         mindscapeDefense: resolve(__dirname, 'src/games/mindscape-defence/index.html'),
+        feelingFusion: resolve(__dirname, 'src/games/Feeling-Fusion/index.html'),
+        mythVsFact: resolve(__dirname, 'src/games/Myth-vs-Fact/index.html'),
+        signalScout: resolve(__dirname, 'src/games/Signal-Scout/index.html'),
       },
     },
   },

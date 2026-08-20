@@ -142,6 +142,45 @@ export function Screen2_ArcadeCollection({ onSelectGame }) {
           <circle cx="100" cy="60" r="45" stroke="#F7C5D1" strokeWidth="2" strokeDasharray="4 4" />
         </svg>
       )
+    },
+    {
+      id: 'feeling_fusion',
+      title: 'Feeling Fusion',
+      category: 'Mood & Feelings',
+      tag: 'DISCOVER',
+      badgeColor: 'bg-zen-yellow text-zen-plum',
+      description: 'Blend emotions together and discover what your feelings are trying to say.',
+      bgGradient: 'from-[#FFF7D6] to-[#FDECC8]',
+      borderColor: 'border-zen-yellow',
+      imageSvg: (
+        <div className="flex h-32 items-center justify-center bg-[#FFF7D6] text-5xl">✨💛✨</div>
+      )
+    },
+    {
+      id: 'myth_vs_fact',
+      title: 'Myth vs Fact',
+      category: 'Mindful Puzzles',
+      tag: 'LEARN',
+      badgeColor: 'bg-zen-tealBg text-zen-teal',
+      description: 'Sort mental-health statements into myths and facts through a calm card challenge.',
+      bgGradient: 'from-[#E8F7F5] to-[#D9EEEC]',
+      borderColor: 'border-zen-teal/40',
+      imageSvg: (
+        <div className="flex h-32 items-center justify-center gap-3 bg-[#E8F7F5] text-4xl">🧠⚖️</div>
+      )
+    },
+    {
+      id: 'signal_scout',
+      title: 'Signal Scout',
+      category: 'Pathway Flow',
+      tag: 'NOTICE',
+      badgeColor: 'bg-zen-pinkAccent text-zen-plum',
+      description: 'Learn to notice signals of distress and choose compassionate ways to respond.',
+      bgGradient: 'from-[#F3F0FF] to-[#E7E0FA]',
+      borderColor: 'border-indigo-200',
+      imageSvg: (
+        <div className="flex h-32 items-center justify-center bg-[#F3F0FF] text-5xl">📡💬</div>
+      )
     }
   ];
 

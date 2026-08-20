@@ -1,0 +1,47 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <!-- Theme Liquid Gradient (Teal to Soft Pink) -->
+        <linearGradient id="liquid-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#26A69A" />
+            <stop offset="100%" stop-color="#FFAB91" />
+        </linearGradient>
+        
+        <!-- Discovery Glow -->
+        <filter id="glow-effect" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur stdDeviation="12" result="blur" />
+            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+        </filter>
+    </defs>
+
+    <!-- Outer Glow Aura (Teal) -->
+    <circle cx="256" cy="280" r="180" fill="#26A69A" opacity="0.15" filter="url(#glow-effect)" />
+
+    <!-- Glass Flask Body -->
+    <path d="M210 60H302M220 60V180L100 420C90 445 110 460 135 460H377C402 460 422 445 412 420L292 180V60" 
+          stroke="white" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" />
+    
+    <!-- Liquid Content -->
+    <path d="M145 440C125 440 120 430 130 410L220 220C220 220 256 200 292 220L382 410C392 430 387 440 367 440H145Z" 
+          fill="url(#liquid-gradient)" />
+
+    <!-- Swirling Energy -->
+    <path d="M190 380Q256 420 322 380" stroke="white" stroke-width="6" stroke-linecap="round" opacity="0.4" />
+
+    <!-- Discovery Heart Core -->
+    <g filter="url(#glow-effect)">
+        <path d="M256 300C256 300 248 288 232 288C216 288 210 302 210 312C210 335 256 360 256 360C256 360 302 335 302 312C302 302 296 288 280 288C264 288 256 300 256 300Z" 
+              fill="#FFEB3B" />
+    </g>
+
+    <!-- Bubbles -->
+    <circle cx="200" cy="340" r="12" fill="white" opacity="0.4" />
+    <circle cx="310" cy="360" r="8" fill="white" opacity="0.3" />
+    <circle cx="240" cy="280" r="6" fill="white" opacity="0.5" />
+
+    <!-- Glass Highlights (Thicker, more stylized) -->
+    <path d="M360 300C380 340 385 400 370 430" stroke="white" stroke-width="12" stroke-linecap="round" opacity="0.2" />
+    <rect x="235" y="80" width="12" height="60" rx="6" fill="white" opacity="0.15" />
+
+    <!-- Rim Detail -->
+    <path d="M210 60C210 50 302 50 302 60" stroke="white" stroke-width="20" stroke-linecap="round" />
+</svg>

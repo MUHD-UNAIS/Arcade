@@ -1,24 +1,30 @@
 {
-  "name": "Words of Wisdome",
-  "short_name": "WordsOfWisdome",
-  "description": "A journey to master the language of service and empathy.",
-  "start_url": ".",
+  "name": "Signal Scout",
+  "short_name": "SignalScout",
+  "description": "Urban Compassion System: Identifying silent distress signals.",
+  "start_url": "/",
   "display": "standalone",
-  "background_color": "#0f172a",
-  "theme_color": "#14b8a6",
   "orientation": "portrait",
+  "background_color": "#0f172a",
+  "theme_color": "#f97316",
   "icons": [
     {
-      "src": "/stickman_assets/logo.svg",
+      "src": "/brand/logo.svg",
+      "sizes": "192x192 512x512",
       "type": "image/svg+xml",
-      "sizes": "192x192",
-      "purpose": "maskable"
-    },
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": [
+    "games",
+    "education"
+  ],
+  "screenshots": [
     {
-      "src": "/stickman_assets/logo.svg",
-      "type": "image/svg+xml",
-      "sizes": "512x512",
-      "purpose": "any"
+      "src": "/brand/1.jpg",
+      "sizes": "1080x1080",
+      "type": "image/jpeg",
+      "form_factor": "wide"
     }
   ]
 }

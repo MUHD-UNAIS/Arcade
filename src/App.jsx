@@ -122,6 +122,12 @@ export function App() {
           />
         ) : currentView === 'mindscape_defense' ? (
           <EmbeddedGame gameId="mindscape_defense" title="Mindscape Defense" onBackToArcade={handleGoToArcade} />
+        ) : currentView === 'feeling_fusion' ? (
+          <EmbeddedGame gameId="feeling_fusion" title="Feeling Fusion" onBackToArcade={handleGoToArcade} />
+        ) : currentView === 'myth_vs_fact' ? (
+          <EmbeddedGame gameId="myth_vs_fact" title="Myth vs Fact" onBackToArcade={handleGoToArcade} />
+        ) : currentView === 'signal_scout' ? (
+          <EmbeddedGame gameId="signal_scout" title="Signal Scout" onBackToArcade={handleGoToArcade} />
         ) : (
           <Screen2_ArcadeCollection
             onSelectGame={handleSelectGame}

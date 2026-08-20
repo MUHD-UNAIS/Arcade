@@ -1,0 +1,11 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="fav-vibrant" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#26A69A" />
+            <stop offset="100%" stop-color="#FFAB91" />
+        </linearGradient>
+    </defs>
+    <!-- Bold Flask Silhouette -->
+    <path d="M12 4H20M13 4V10L6 24C5 26 6 28 8 28H24C26 28 27 26 26 24L19 10V4" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M9 25L14 14C14 14 16 13 18 14L23 25C23.5 26.5 22.5 27.5 21 27.5H11C9.5 27.5 8.5 26.5 9 25Z" fill="url(#fav-vibrant)" />
+</svg>
