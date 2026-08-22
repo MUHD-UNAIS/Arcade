@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { Search, Sparkles, Play, Rocket, Filter } from 'lucide-react';
+import { Search, Sparkles, Play, Rocket } from 'lucide-react';
 import { sounds } from '../SoundEffects';
 
 export function Screen2_ArcadeCollection({ onSelectGame }) {
   const [searchQuery, setSearchQuery] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState('All');
 
   const games = [
     {
@@ -138,14 +137,10 @@ export function Screen2_ArcadeCollection({ onSelectGame }) {
     }
   ];
 
-  const categories = ['All', 'Mindful Puzzles', 'Tactile Pairs', 'Physics & Play', 'Pathway Flow', 'Mood & Feelings', 'Relaxed Strategy'];
-
-  const filteredGames = games.filter(game => {
-    const matchesCategory = selectedCategory === 'All' || game.category === selectedCategory;
-    const matchesSearch = game.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      game.description.toLowerCase().includes(searchQuery.toLowerCase());
-    return matchesCategory && matchesSearch;
-  });
+  const visibleGames = games.filter(game =>
+    game.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    game.description.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
   return (
     <div className="min-h-[calc(100vh-4rem)] p-4 sm:p-6 lg:p-10 max-w-7xl mx-auto">
@@ -178,29 +173,9 @@ export function Screen2_ArcadeCollection({ onSelectGame }) {
         </div>
       </div>
 
-      {/* Category Pills */}
-      <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-6 no-scrollbar">
-        <Filter className="w-4 h-4 text-zen-mauve shrink-0 mr-1" />
-        {categories.map((cat) => (
-          <button
-            key={cat}
-            onClick={() => {
-              setSelectedCategory(cat);
-              sounds.playClick();
-            }}
-            className={`px-4 py-1.5 rounded-full text-xs font-bold transition-all whitespace-nowrap ${selectedCategory === cat
-                ? 'bg-zen-plum text-white shadow-md'
-                : 'bg-white/70 text-zen-plum hover:bg-zen-pinkCard border border-zen-pinkAccent/30'
-              }`}
-          >
-            {cat}
-          </button>
-        ))}
-      </div>
-
       {/* Game Cards Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {filteredGames.map((game) => (
+        {visibleGames.map((game) => (
           <div
             key={game.id}
             onClick={() => {

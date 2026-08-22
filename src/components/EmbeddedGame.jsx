@@ -26,8 +26,9 @@ export function EmbeddedGame({ gameId, title, onBackToArcade }) {
       <iframe
         title={title}
         src={gamePath}
-        className="h-full w-full border-0"
+        className="block h-[100dvh] min-h-full w-full border-0"
         allow="autoplay; fullscreen"
+        allowFullScreen
       />
     </div>
   );
