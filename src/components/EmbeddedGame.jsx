@@ -17,13 +17,6 @@ export function EmbeddedGame({ gameId, title, onBackToArcade }) {
 
   return (
     <div className="fixed inset-0 z-20 bg-slate-950">
-      <button
-        type="button"
-        onClick={onBackToArcade}
-        className="fixed top-3 left-3 z-[10000] rounded-xl bg-white/90 px-3 py-2 text-xs font-bold text-slate-800 shadow-lg transition hover:bg-white"
-      >
-        Back to Arcade
-      </button>
       <iframe
         title={title}
         src={gamePath}
