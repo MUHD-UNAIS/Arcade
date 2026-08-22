@@ -2,29 +2,39 @@ import React, { useState } from 'react';
 import { Mail, Lock, Eye, EyeOff, Sparkles, Heart, ShieldCheck, ArrowRight, UserCheck } from 'lucide-react';
 import { sounds } from '../SoundEffects';
 
-export function Screen1_Login({ onLogin, onGuestAccess, setActiveScreen }) {
+export function Screen1_Login({ onLogin, onRegister, onGuestAccess }) {
   const [isLoginTab, setIsLoginTab] = useState(true);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [name, setName] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [rememberMe, setRememberMe] = useState(true);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formMessage, setFormMessage] = useState('');
+  const [formError, setFormError] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setFormMessage('');
+    setFormError('');
+    setIsSubmitting(true);
     sounds.playLaunch();
-    onLogin({
-      name: isLoginTab ? (email.split('@')[0] || 'Zen Explorer') : (name || 'Cozy Explorer'),
-      email: email || 'user@luminazen.app',
-      avatar: isLoginTab ? '🧘' : '✨'
-    });
-    setActiveScreen('screen2');
+    let result;
+    try {
+      result = isLoginTab
+        ? await onLogin({ email, password, rememberMe })
+        : await onRegister({ name, email, password });
+    } catch (error) {
+      result = { error: error.message || 'Authentication failed. Please try again.' };
+    }
+    setIsSubmitting(false);
+    if (result?.error) setFormError(result.error);
+    else if (result?.message) setFormMessage(result.message);
   };
 
   const handleGuest = () => {
     sounds.playClick();
     onGuestAccess();
-    setActiveScreen('screen2');
   };
 
   return (
@@ -225,11 +235,14 @@ export function Screen1_Login({ onLogin, onGuestAccess, setActiveScreen }) {
               {/* Submit CTA */}
               <button
                 type="submit"
+                disabled={isSubmitting}
                 className="w-full mt-4 py-3 px-6 rounded-2xl bg-zen-plum hover:bg-zen-plumHover text-white font-bold text-xs uppercase tracking-wider shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 group"
               >
-                <span>{isLoginTab ? 'Enter Safe Space' : 'Create Account'}</span>
+                <span>{isSubmitting ? 'Please wait...' : (isLoginTab ? 'Enter Safe Space' : 'Create Account')}</span>
                 <ArrowRight className="w-4 h-4 text-zen-pinkAccent group-hover:translate-x-1 transition-transform" />
               </button>
+              {formError && <p role="alert" className="text-xs font-semibold text-red-600">{formError}</p>}
+              {formMessage && <p role="status" className="text-xs font-semibold text-emerald-700">{formMessage}</p>}
             </form>
           </div>
 

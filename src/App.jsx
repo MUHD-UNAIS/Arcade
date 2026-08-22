@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Navbar } from './components/Navbar';
 import { Screen1_Login } from './components/Screen1_Login';
 import { Screen2_ArcadeCollection } from './components/Screen2_ArcadeCollection';
 import { MiniGameModal } from './components/MiniGameModal';
 import { EmbeddedGame } from './components/EmbeddedGame';
+import { supabase } from './lib/supabase';
 
 export function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [authReady, setAuthReady] = useState(false);
   const [currentView, setCurrentView] = useState('login'); // 'login', 'arcade', or game IDs
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [isAudioOn, setIsAudioOn] = useState(false);
@@ -19,10 +21,58 @@ export function App() {
     avatar: '🧘'
   });
 
-  const handleLoginSuccess = (userData) => {
-    if (userData) setUser(userData);
-    setIsAuthenticated(true);
-    setCurrentView('arcade');
+  useEffect(() => {
+    let mounted = true;
+
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      if (!mounted) return;
+      if (session?.user) {
+        setUser({
+          name: session.user.user_metadata?.display_name || session.user.email?.split('@')[0] || 'Zen Explorer',
+          email: session.user.email || '',
+          avatar: '🧘',
+        });
+        setIsAuthenticated(true);
+        setCurrentView('arcade');
+      }
+      setAuthReady(true);
+    });
+
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+      if (!mounted) return;
+      setIsAuthenticated(Boolean(session));
+      if (!session) {
+        setCurrentView('login');
+        return;
+      }
+      setUser({
+        name: session.user.user_metadata?.display_name || session.user.email?.split('@')[0] || 'Zen Explorer',
+        email: session.user.email || '',
+        avatar: '🧘',
+      });
+      setCurrentView('arcade');
+    });
+
+    return () => {
+      mounted = false;
+      subscription.unsubscribe();
+    };
+  }, []);
+
+  const handleLogin = async ({ email, password }) => {
+    const { error } = await supabase.auth.signInWithPassword({ email, password });
+    return { error: error?.message || null };
+  };
+
+  const handleRegister = async ({ name, email, password }) => {
+    const { data, error } = await supabase.auth.signUp({
+      email,
+      password,
+      options: { data: { display_name: name } },
+    });
+    if (error) return { error: error.message };
+    if (!data.session) return { message: 'Account created. Check your email to confirm your account, then log in.' };
+    return { error: null };
   };
 
   const handleGuestAccess = () => {
@@ -35,9 +85,8 @@ export function App() {
     setCurrentView('arcade');
   };
 
-  const handleLogout = () => {
-    setIsAuthenticated(false);
-    setCurrentView('login');
+  const handleLogout = async () => {
+    await supabase.auth.signOut();
     setActiveMiniGame(null);
   };
 
@@ -53,6 +102,12 @@ export function App() {
   const handlePlayMiniGame = (game) => {
     setActiveMiniGame(game);
   };
+
+  const isGameView = isAuthenticated && currentView !== 'arcade' && currentView !== 'login';
+
+  if (!authReady) {
+    return <div className="min-h-screen bg-[#FDF2F4]" />;
+  }
 
   return (
     <div className={`min-h-screen transition-colors duration-500 relative ${
@@ -70,26 +125,28 @@ export function App() {
         </div>
       )}
 
-      {/* Main Top Navbar */}
-      <Navbar
-        isAuthenticated={isAuthenticated}
-        currentView={currentView}
-        onGoToArcade={handleGoToArcade}
-        onLogout={handleLogout}
-        isDarkMode={isDarkMode}
-        setIsDarkMode={setIsDarkMode}
-        isAudioOn={isAudioOn}
-        setIsAudioOn={setIsAudioOn}
-        user={user}
-      />
+      {/* Keep game pages fully immersive; each game owns its own controls. */}
+      {!isGameView && (
+        <Navbar
+          isAuthenticated={isAuthenticated}
+          currentView={currentView}
+          onGoToArcade={handleGoToArcade}
+          onLogout={handleLogout}
+          isDarkMode={isDarkMode}
+          setIsDarkMode={setIsDarkMode}
+          isAudioOn={isAudioOn}
+          setIsAudioOn={setIsAudioOn}
+          user={user}
+        />
+      )}
 
       {/* View Router */}
       <div className="relative z-10">
         {!isAuthenticated || currentView === 'login' ? (
           <Screen1_Login
-            onLogin={handleLoginSuccess}
+            onLogin={handleLogin}
+            onRegister={handleRegister}
             onGuestAccess={handleGuestAccess}
-            setActiveScreen={handleLoginSuccess}
           />
         ) : currentView === 'arcade' ? (
           <Screen2_ArcadeCollection
