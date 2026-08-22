@@ -13,7 +13,7 @@ function normalizeLittleBigFeelingsAssets() {
         return null
       }
 
-      if (!/\.(css|html|js)$/.test(id)) return null
+      if (!/\.(html|js)$/.test(id)) return null
 
       const normalized = code.replace(/(['"`])assets\//g, '$1/assets/')
       return normalized === code ? null : { code: normalized, map: null }

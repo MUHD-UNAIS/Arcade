@@ -28,7 +28,6 @@ export function EmbeddedGame({ gameId, title, onBackToArcade }) {
         src={gamePath}
         className="block h-[100dvh] min-h-full w-full border-0"
         allow="autoplay; fullscreen"
-        allowFullScreen
       />
     </div>
   );
