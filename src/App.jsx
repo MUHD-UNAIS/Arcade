@@ -1,14 +1,9 @@
-import React, { lazy, Suspense, useState } from 'react';
+import React, { useState } from 'react';
 import { Navbar } from './components/Navbar';
 import { Screen1_Login } from './components/Screen1_Login';
 import { Screen2_ArcadeCollection } from './components/Screen2_ArcadeCollection';
-import { Screen3_WordsOfWisdom } from './components/Screen3_WordsOfWisdom';
-import { Screen4_LittleBigFeelings } from './components/Screen4_LittleBigFeelings';
-import { Screen_MindscapeDefense } from './components/Screen_MindscapeDefense';
 import { MiniGameModal } from './components/MiniGameModal';
 import { EmbeddedGame } from './components/EmbeddedGame';
-
-const StickmanGame = lazy(() => import('./games/stickman/src/StickmanGame'));
 
 export function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -105,9 +100,7 @@ export function App() {
         ) : currentView === 'little_big_feelings' ? (
           <EmbeddedGame gameId="little_big_feelings" title="Little Big Feelings" onBackToArcade={handleGoToArcade} />
         ) : currentView === 'stick_man' ? (
-          <Suspense fallback={<div className="min-h-screen bg-slate-950" />}>
-            <StickmanGame onExitToArcade={handleGoToArcade} />
-          </Suspense>
+          <EmbeddedGame gameId="stick_man" title="Stick Man to the Rescue" onBackToArcade={handleGoToArcade} />
         ) : currentView === 'mindscape_defense' ? (
           <EmbeddedGame gameId="mindscape_defense" title="Mindscape Defense" onBackToArcade={handleGoToArcade} />
         ) : currentView === 'feeling_fusion' ? (

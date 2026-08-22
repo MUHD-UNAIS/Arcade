@@ -1,6 +1,7 @@
 import React from 'react';
 
 const GAME_PATHS = {
+  stick_man: '/src/games/stickman/index.html',
   words_of_wisdom: '/src/games/Words-of-Wisdom/index.html',
   little_big_feelings: '/src/games/Little-Big-Feelings/index.html',
   mindscape_defense: '/src/games/mindscape-defence/index.html',

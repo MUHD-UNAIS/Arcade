@@ -29,6 +29,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         arcade: resolve(__dirname, 'index.html'),
+        stickman: resolve(__dirname, 'src/games/stickman/index.html'),
         wordsOfWisdom: resolve(__dirname, 'src/games/Words-of-Wisdom/index.html'),
         littleBigFeelings: resolve(__dirname, 'src/games/Little-Big-Feelings/index.html'),
         mindscapeDefense: resolve(__dirname, 'src/games/mindscape-defence/index.html'),
