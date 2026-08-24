@@ -25,6 +25,16 @@ function normalizeLittleBigFeelingsAssets() {
 export default defineConfig({
   plugins: [normalizeLittleBigFeelingsAssets(), react()],
   base: './',
+  resolve: {
+    dedupe: ['react', 'react-dom'],
+    alias: {
+      react: resolve(__dirname, 'node_modules/react'),
+      'react-dom': resolve(__dirname, 'node_modules/react-dom'),
+    },
+  },
+  optimizeDeps: {
+    include: ['react', 'react-dom', 'react/jsx-runtime'],
+  },
   build: {
     rollupOptions: {
       input: {
