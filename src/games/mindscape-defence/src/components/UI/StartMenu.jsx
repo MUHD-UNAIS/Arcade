@@ -324,6 +324,18 @@ export default function StartMenu() {
               >
                 <BookOpen className="inline w-5 h-5 mr-2" /> How to Play
               </button>
+
+              <button
+                type="button"
+                onClick={() => {
+                  try {
+                    window.parent.postMessage({ type: 'EXIT_TO_ARCADE' }, '*');
+                  } catch (e) {}
+                }}
+                className="w-full py-2.5 sm:py-3.5 h-sm:py-1.5 h-sm:rounded-[0.85rem] h-sm:text-[0.7rem] h-sm:border-[2.5px] h-xs:py-1 bg-slate-100 hover:bg-slate-200 border-[3px] border-slate-800 text-slate-700 font-extrabold uppercase tracking-wider rounded-2xl shadow-[3px_3px_0px_rgba(30,41,59,1)] hover:scale-102 active:scale-98 active:translate-y-0.5 active:shadow-[1px_1px_0px_rgba(30,41,59,1)] transition-all cursor-pointer flex items-center justify-center gap-2"
+              >
+                <ArrowLeft className="inline w-5 h-5 mr-1" /> Exit to Arcade
+              </button>
             </div>
           </motion.div>
         )}

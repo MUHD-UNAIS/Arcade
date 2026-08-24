@@ -6,31 +6,31 @@ export function Screen2_ArcadeCollection({ onSelectGame }) {
   const [searchQuery, setSearchQuery] = useState('');
 
   const games = [
-    {
-      id: 'words_of_wisdom',
-      title: 'Words of Wisdom',
-      category: 'Mindful Puzzles',
-      tag: 'CALMING',
-      badgeColor: 'bg-zen-pinkAccent text-zen-plum',
-      description: 'A calming puzzle & quote builder to inspire mindfulness.',
-      bgGradient: 'from-[#FFF3F5] to-[#FCEBEF]',
-      borderColor: 'border-zen-pinkAccent',
-      imageSvg: (
-        <svg className="w-full h-32 object-contain" viewBox="0 0 200 120" fill="none">
-          <rect width="200" height="120" rx="16" fill="#FCEBEF" />
-          <ellipse cx="100" cy="80" rx="40" ry="25" fill="#FFFFFF" />
-          <ellipse cx="80" cy="70" rx="20" ry="20" fill="#FFFFFF" />
-          <ellipse cx="120" cy="70" rx="20" ry="20" fill="#FFFFFF" />
-          <path d="M94 65C95 67 97 67 98 65" stroke="#4A353B" strokeWidth="2" strokeLinecap="round" />
-          <path d="M102 65C103 67 105 67 106 65" stroke="#4A353B" strokeWidth="2" strokeLinecap="round" />
-          <path d="M85 75L100 80L115 75V88L100 92L85 88V75Z" fill="#F7C5D1" stroke="#A86B79" strokeWidth="1.5" />
-          <path d="M100 80V92" stroke="#A86B79" strokeWidth="1.5" />
-          <polygon points="100,20 103,28 111,31 103,34 100,42 97,34 89,31 97,28" fill="#EADF9E" />
-          <circle cx="50" cy="30" r="3" fill="#A86B79" />
-          <circle cx="155" cy="40" r="4" fill="#7A8450" />
-        </svg>
-      )
-    },
+    // {
+    //   id: 'words_of_wisdom',
+    //   title: 'Words of Wisdom',
+    //   category: 'Mindful Puzzles',
+    //   tag: 'CALMING',
+    //   badgeColor: 'bg-zen-pinkAccent text-zen-plum',
+    //   description: 'A calming puzzle & quote builder to inspire mindfulness.',
+    //   bgGradient: 'from-[#FFF3F5] to-[#FCEBEF]',
+    //   borderColor: 'border-zen-pinkAccent',
+    //   imageSvg: (
+    //     <svg className="w-full h-32 object-contain" viewBox="0 0 200 120" fill="none">
+    //       <rect width="200" height="120" rx="16" fill="#FCEBEF" />
+    //       <ellipse cx="100" cy="80" rx="40" ry="25" fill="#FFFFFF" />
+    //       <ellipse cx="80" cy="70" rx="20" ry="20" fill="#FFFFFF" />
+    //       <ellipse cx="120" cy="70" rx="20" ry="20" fill="#FFFFFF" />
+    //       <path d="M94 65C95 67 97 67 98 65" stroke="#4A353B" strokeWidth="2" strokeLinecap="round" />
+    //       <path d="M102 65C103 67 105 67 106 65" stroke="#4A353B" strokeWidth="2" strokeLinecap="round" />
+    //       <path d="M85 75L100 80L115 75V88L100 92L85 88V75Z" fill="#F7C5D1" stroke="#A86B79" strokeWidth="1.5" />
+    //       <path d="M100 80V92" stroke="#A86B79" strokeWidth="1.5" />
+    //       <polygon points="100,20 103,28 111,31 103,34 100,42 97,34 89,31 97,28" fill="#EADF9E" />
+    //       <circle cx="50" cy="30" r="3" fill="#A86B79" />
+    //       <circle cx="155" cy="40" r="4" fill="#7A8450" />
+    //     </svg>
+    //   )
+    // },
     {
       id: 'stick_man',
       title: 'Stick Man to the Rescue',
@@ -77,25 +77,25 @@ export function Screen2_ArcadeCollection({ onSelectGame }) {
         </svg>
       )
     },
-    {
-      id: 'mindscape_defense',
-      title: 'Mindscape Defense',
-      category: 'Relaxed Strategy',
-      tag: 'PROTECT PEACE',
-      badgeColor: 'bg-zen-pinkHeader text-zen-plum',
-      description: 'Protect your inner peace in a relaxed strategy experience.',
-      bgGradient: 'from-[#FAF2F4] to-[#FCEBEF]',
-      borderColor: 'border-zen-mauve/30',
-      imageSvg: (
-        <svg className="w-full h-32 object-contain" viewBox="0 0 200 120" fill="none">
-          <rect width="200" height="120" rx="16" fill="#FAF2F4" />
-          <polygon points="100,25 125,55 75,55" fill="#A86B79" />
-          <rect x="85" y="55" width="30" height="35" fill="#FCEBEF" stroke="#A86B79" strokeWidth="2" />
-          <circle cx="100" cy="70" r="6" fill="#EADF9E" />
-          <circle cx="100" cy="60" r="45" stroke="#F7C5D1" strokeWidth="2" strokeDasharray="4 4" />
-        </svg>
-      )
-    },
+    // {
+    //   id: 'mindscape_defense',
+    //   title: 'Mindscape Defense',
+    //   category: 'Relaxed Strategy',
+    //   tag: 'PROTECT PEACE',
+    //   badgeColor: 'bg-zen-pinkHeader text-zen-plum',
+    //   description: 'Protect your inner peace in a relaxed strategy experience.',
+    //   bgGradient: 'from-[#FAF2F4] to-[#FCEBEF]',
+    //   borderColor: 'border-zen-mauve/30',
+    //   imageSvg: (
+    //     <svg className="w-full h-32 object-contain" viewBox="0 0 200 120" fill="none">
+    //       <rect width="200" height="120" rx="16" fill="#FAF2F4" />
+    //       <polygon points="100,25 125,55 75,55" fill="#A86B79" />
+    //       <rect x="85" y="55" width="30" height="35" fill="#FCEBEF" stroke="#A86B79" strokeWidth="2" />
+    //       <circle cx="100" cy="70" r="6" fill="#EADF9E" />
+    //       <circle cx="100" cy="60" r="45" stroke="#F7C5D1" strokeWidth="2" strokeDasharray="4 4" />
+    //     </svg>
+    //   )
+    // },
     {
       id: 'feeling_fusion',
       title: 'Feeling Fusion',

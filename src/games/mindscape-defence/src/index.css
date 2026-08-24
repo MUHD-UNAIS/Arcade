@@ -1,12 +1,9 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@custom-variant h-sm (@media (max-height: 640px));
-@custom-variant h-xs (@media (max-height: 480px));
-
-@theme {
-  --font-sans: "Fredoka",
-  system-ui,
-  sans-serif;
+:root {
+  --font-sans: "Fredoka", system-ui, sans-serif;
 }
 
 body {
@@ -15,6 +12,26 @@ body {
   margin: 0;
   padding: 0;
   overflow: hidden;
+}
+
+/* Utilities compatibility */
+.bg-linear-to-br {
+  background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
+}
+.bg-linear-to-r {
+  background-image: linear-gradient(to right, var(--tw-gradient-stops));
+}
+.z-9999 {
+  z-index: 9999;
+}
+.z-99999 {
+  z-index: 99999;
+}
+.hover\:scale-102:hover {
+  transform: scale(1.02);
+}
+.active\:scale-98:active {
+  transform: scale(0.98);
 }
 
 /* Custom animations for cute effects */
