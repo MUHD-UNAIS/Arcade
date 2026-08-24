@@ -1,0 +1,39 @@
+<svg viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg">
+    <!-- Super Cute Sunny Backyard (Dog Home) -->
+    <rect width="1000" height="1000" fill="#E1F5FE" />
+    
+    <style>
+        .sunlight-pulse { animation: sunlight-pulse 10s infinite alternate ease-in-out; transform-origin: 500px 350px; }
+        @keyframes sunlight-pulse {
+            from { opacity: 0.1; transform: scale(1); }
+            to { opacity: 0.25; transform: scale(1.1); }
+        }
+        .flower-sway { animation: flower-sway 6s infinite ease-in-out; transform-origin: 200px 1000px; }
+        @keyframes flower-sway {
+            0%, 100% { transform: rotate(-2deg); }
+            50% { transform: rotate(2deg); }
+        }
+    </style>
+
+    <!-- Soft Sunlight Glow -->
+    <circle class="sunlight-pulse" cx="500" cy="350" r="800" fill="white" filter="blur(60px)" />
+    
+    <!-- Distant Green Hills -->
+    <path d="M-100 850 Q300 700 600 800 T1100 850" fill="#C8E6C9" opacity="0.8" />
+    <path d="M-200 950 Q400 800 700 900 T1200 1000" fill="#81C784" />
+    
+    <!-- Cute Wooden Fence (Rounded Stakes) -->
+    <path d="M0 650 L1000 650" stroke="#D7CCC8" stroke-width="20" />
+    <path d="M100 600 Q100 580 120 580 L120 700 L80 700 L80 580 Q80 580 100 600" fill="#D7CCC8" />
+    <path d="M300 600 Q300 580 320 580 L320 700 L280 700 L280 580 Q280 580 300 600" fill="#D7CCC8" />
+    <path d="M500 600 Q500 580 520 580 L520 700 L480 700 L480 580 Q480 580 500 600" fill="#D7CCC8" />
+    <path d="M700 600 Q700 580 720 580 L720 700 L680 700 L680 580 Q680 580 700 600" fill="#D7CCC8" />
+    <path d="M900 600 Q900 580 920 580 L920 700 L880 700 L880 580 Q880 580 900 600" fill="#D7CCC8" />
+    
+    <!-- Blooming Pink Flowers -->
+    <g class="flower-sway">
+        <circle cx="200" cy="900" r="10" fill="#FF80AB" />
+        <circle cx="215" cy="890" r="10" fill="#FF80AB" />
+        <circle cx="205" cy="910" r="10" fill="#FF80AB" />
+    </g>
+</svg>

@@ -1,0 +1,252 @@
+.emotion-select-container {
+    width: 100%;
+    max-width: 1600px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: clamp(2rem, 5vh, 4rem);
+    padding: 1.5rem 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.emotion-top-actions .circle-btn, .emotion-left-actions .circle-btn {
+    background: white;
+    border: 2px solid #F5F5F5;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.emotion-top-actions .circle-btn:hover, .emotion-left-actions .circle-btn:hover {
+    transform: scale(1.1) rotate(5deg);
+    border-color: var(--pink);
+    color: var(--pink);
+}
+
+.emotion-header {
+    position: relative;
+    text-align: center;
+    padding: 0 2.5rem;
+    flex-shrink: 0;
+    animation: fadeSlideDown 0.8s var(--ease) both;
+    width: 100%;
+}
+
+.emotion-header .back-arrow {
+    flex-shrink: 0;
+    z-index: 10;
+}
+
+.header-top-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.emotion-top-actions, .emotion-left-actions {
+    display: flex;
+    gap: 1rem;
+    z-index: 100;
+    flex-shrink: 0;
+}
+
+.emotion-header-text {
+    flex: 1;
+    padding: 0;
+}
+
+.premium-title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin: 0;
+}
+
+.premium-subtitle {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text);
+    opacity: 0.7;
+    letter-spacing: 0.01em;
+}
+
+.emotion-illustrative-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: clamp(1rem, 2vw, 2rem);
+    padding: 5rem 2.2rem 4rem;
+    width: 100%;
+    margin: 0;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.emotion-illustrative-grid::-webkit-scrollbar {
+    display: none;
+}
+
+.emotion-illustrative-btn {
+    position: relative;
+    background: var(--white);
+    border: none;
+    border-radius: 20px;
+    padding: clamp(1.2rem, 3vh, 2.5rem) 1.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+    cursor: pointer;
+    transition: all 0.5s var(--spring);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02), 0 8px 24px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    height: auto;
+    flex: 0 0 280px;
+    min-width: 250px;
+    max-width: 320px;
+    scroll-snap-align: center;
+    animation: cardEntrance 0.8s var(--spring) both;
+}
+
+.emotion-illustrative-btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top right, var(--emo-color), transparent 70%);
+    opacity: 0.03;
+    transition: opacity 0.4s ease;
+}
+
+.emotion-illustrative-btn:hover {
+    transform: translateY(-20px) scale(1.03);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12), 0 0 0 4px var(--emo-color);
+}
+
+.emotion-illustrative-btn:hover::before {
+    opacity: 0.08;
+}
+
+.emo-illustration-wrap {
+    width: clamp(60px, 10vw, 120px);
+    height: clamp(60px, 10vw, 120px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.6s var(--spring);
+    filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.1));
+    animation: idleFloat 6s ease-in-out infinite;
+}
+
+.emotion-illustrative-btn:hover .emo-illustration-wrap {
+    transform: scale(1.2) rotate(5deg);
+    animation-play-state: paused;
+}
+
+.emo-illustration-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.emo-info {
+    text-align: center;
+    z-index: 2;
+    max-width: 90%;
+}
+
+.emo-info h3 {
+    font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+    color: var(--text);
+    margin-bottom: 0.4rem;
+    transition: all 0.4s ease;
+    background: linear-gradient(135deg, var(--text), var(--emo-color));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: var(--text);
+}
+
+.emotion-illustrative-btn:hover .emo-info h3 {
+    -webkit-text-fill-color: transparent;
+    transform: scale(1.1);
+}
+
+.emo-info p {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.4;
+    font-weight: 500;
+    opacity: 0.9;
+}
+
+.emo-pulse {
+    position: absolute;
+    inset: 0;
+    border: 3px solid transparent;
+    border-radius: 35px;
+    transition: border-color 0.4s ease;
+    pointer-events: none;
+}
+
+.emotion-illustrative-btn:hover .emo-pulse {
+    border-color: var(--emo-color);
+    animation: pulseBorder 2s infinite;
+}
+
+/* Mini-Game Shortcuts (Arcade Badge Style) */
+.mini-game-shortcuts {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 0.5rem 0;
+    width: 100%;
+}
+
+.mini-game-badge {
+    background: white;
+    border: none;
+    border-radius: 20px;
+    padding: 0.6rem 0.8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.08);
+    transition: var(--transition);
+    cursor: pointer;
+    width: 85px;
+}
+
+.mini-game-badge:hover {
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+}
+
+.game-badge-svg {
+    width: 40px;
+    height: 40px;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+}
+
+.mini-game-badge span {
+    font-size: 0.6rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text);
+    opacity: 0.8;
+}
+
+.mb-badge {
+    border-bottom: 4px solid var(--yellow);
+}
+
+.az-badge {
+    border-bottom: 4px solid var(--blue);
+}
+
+.mixer-badge {
+    border-bottom: 4px solid #B39DDB;
+}

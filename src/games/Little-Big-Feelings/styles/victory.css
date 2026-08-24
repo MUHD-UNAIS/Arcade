@@ -1,0 +1,123 @@
+/* ============================================================
+   SCREEN 5 — VICTORY
+   ============================================================ */
+.victory-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(0.4rem, 1.8vh, 1.2rem);
+    position: relative;
+    max-width: 600px;
+    width: 100%;
+}
+
+.victory-title {
+    font-size: clamp(1.8rem, min(5vw, 7vh), 3.5rem);
+    font-weight: 800;
+    color: var(--orange);
+    text-shadow: 3px 3px 0 white;
+    margin: 0;
+    animation: celebrate 0.6s var(--spring) forwards;
+}
+
+.victory-stars-display {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    animation: pop-in 0.5s 0.3s var(--spring) both;
+}
+
+.victory-star-message {
+    font-size: clamp(0.8rem, 2vh, 1.1rem);
+    font-weight: 800;
+    color: var(--orange);
+    text-align: center;
+    line-height: 1.4;
+    animation: pop-in 0.5s 0.4s var(--spring) both;
+}
+
+.victory-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(0.3rem, 0.8vh, 0.8rem);
+    width: 100%;
+    margin: 0;
+}
+
+.victory-stat {
+    background: var(--white);
+    padding: clamp(0.3rem, 0.8vh, 0.8rem) clamp(0.4rem, 1vw, 1rem);
+    border-radius: var(--r-md);
+    box-shadow: 0 4px 0 #E0E0E0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: pop-in 0.5s var(--spring) both;
+}
+
+.victory-stat:nth-child(1) { animation-delay: 0.2s; }
+.victory-stat:nth-child(2) { animation-delay: 0.35s; }
+.victory-stat:nth-child(3) { animation-delay: 0.5s; }
+
+.victory-stat-value {
+    font-size: clamp(1rem, 2.5vh, 1.8rem);
+    font-weight: 800;
+    color: var(--text);
+}
+
+.victory-stat-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #9E9E9E;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.victory-message {
+    font-size: clamp(0.85rem, 2vh, 1.1rem);
+    font-weight: 600;
+    opacity: 0.85;
+    max-width: 500px;
+    line-height: 1.4;
+}
+
+.victory-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(0.3rem, 0.8vh, 0.6rem);
+    width: 100%;
+    margin-top: 0;
+}
+
+.victory-buttons > button {
+    width: 100%;
+}
+
+/* CONFETTI & SPARKLES */
+.confetti-container {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.confetti-piece {
+    position: absolute;
+    top: -30px;
+    animation: confetti-fall linear forwards;
+    opacity: 0;
+    display: inline-block;
+    border-radius: 2px;
+}
+
+.sparkle {
+    position: fixed;
+    width: 8px;
+    height: 8px;
+    background: var(--yellow);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 1000;
+    animation: sparkle-fly 0.8s ease-out forwards;
+}

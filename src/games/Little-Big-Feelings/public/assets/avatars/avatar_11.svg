@@ -1,0 +1,11 @@
+<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Bee 🐝 -->
+  <ellipse cx="50" cy="55" rx="40" ry="32" fill="#FFEB3B" />
+  <!-- Stripes -->
+  <path d="M40 25 L40 85 M60 25 L60 85" stroke="#212121" stroke-width="12" />
+  <!-- Wings -->
+  <ellipse cx="35" cy="25" rx="15" ry="10" fill="#E1F5FE" opacity="0.7" />
+  <ellipse cx="65" cy="25" rx="15" ry="10" fill="#E1F5FE" opacity="0.7" />
+  <!-- Eye -->
+  <circle cx="75" cy="50" r="4" fill="#212121" />
+</svg>

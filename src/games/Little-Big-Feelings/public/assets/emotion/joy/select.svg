@@ -1,0 +1,11 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Card Base -->
+  <rect x="10" y="10" width="180" height="180" rx="30" fill="white" stroke="#FFD54F" stroke-width="4" />
+  <!-- Joy Face -->
+  <circle cx="100" cy="100" r="70" fill="#FFD54F" />
+  <!-- Happy Eyes (Arches) -->
+  <path d="M70 100 Q80 85 90 100" stroke="white" stroke-width="10" stroke-linecap="round" fill="none" />
+  <path d="M110 100 Q120 85 130 100" stroke="white" stroke-width="10" stroke-linecap="round" fill="none" />
+  <!-- Happy Smile -->
+  <path d="M65 130 Q100 165 135 130" stroke="white" stroke-width="10" stroke-linecap="round" fill="none" />
+</svg>

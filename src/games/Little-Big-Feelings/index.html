@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Little Big Feelings</title>
+    <meta name="description"
+        content="A fun educational memory card game helping children understand emotions, triggers, and healthy coping actions.">
+    <meta name="theme-color" content="#FF80AB">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" href="/assets/brand/nextlogo.svg">
+    <link rel="icon" type="image/svg+xml" href="/assets/brand/favicon.svg">
+    <!-- Lucide Icons (Local copy to avoid tracking prevention issues) -->
+    <script src="/vendor/lucide.min.js"></script>
+</head>
+
+<body>
+    <!--
+        #app is the ONLY mount point.
+        All screen HTML is injected at runtime by main.js
+        using each screen module's template() function.
+
+        Screen modules loaded:
+          screens/Splash.js       → #screen-splash
+          screens/LevelSelect.js  → #screen-level
+          screens/Tutorial.js     → #screen-tutorial
+          screens/Game.js         → #screen-game
+          screens/OverlayMatch.js → #overlay-match
+          screens/OverlayWrong.js → #overlay-wrong
+          screens/Victory.js      → #screen-victory
+    -->
+    <div id="app"></div>
+
+    <!-- Entry point — type="module" enables ES imports -->
+    <script type="module" src="main.js"></script>
+</body>
+
+</html>

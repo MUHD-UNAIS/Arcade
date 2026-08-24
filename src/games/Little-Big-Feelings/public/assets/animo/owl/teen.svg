@@ -1,0 +1,44 @@
+<svg viewBox="0 0 100 130" xmlns="http://www.w3.org/2000/svg">
+    <!-- Wise Teen Owl (Avatar 10 style with body) -->
+    <!-- Medium Body -->
+    <path d="M50 120 Q30 120 30 95 L30 75 Q30 60 50 60 Q70 60 70 75 L70 95 Q70 120 50 120 Z" fill="#A1887F" stroke="#795548" stroke-width="2.5" />
+    <path d="M50 120 Q35 120 35 100 Q35 80 50 80 Q65 80 65 100 Q65 120 50 120 Z" fill="white" opacity="0.3" /> <!-- belly -->
+    <!-- Medium Tufts -->
+    <path d="M25 35 L45 25 L55 35" fill="none" stroke="#795548" stroke-width="6" stroke-linecap="round" />
+    <path d="M75 35 L55 25 L45 35" fill="none" stroke="#795548" stroke-width="6" stroke-linecap="round" />
+    <style>
+        .owl-pupil { animation: owl-move 6.5s infinite; }
+        .owl-eye { animation: owl-blink 5s infinite; transform-origin: 50% 50px; }
+        @keyframes owl-move {
+            0%, 40%, 100% { transform: translate(0, 0); }
+            45%, 55% { transform: translate(2.5px, 1.5px); }
+            60%, 70% { transform: translate(-2.5px, -0.5px); }
+            75%, 85% { transform: translate(0, -2.5px); }
+        }
+        @keyframes owl-blink {
+            0%, 94%, 100% { transform: scaleY(1); }
+            97% { transform: scaleY(0.1); }
+        }
+    </style>
+
+    <!-- Head -->
+    <circle cx="50" cy="58" r="35" fill="#A1887F" />
+    <g class="owl-eye">
+        <!-- Happy Owl Eyes -->
+        <circle cx="38" cy="50" r="14" fill="white" />
+        <circle cx="62" cy="50" r="14" fill="white" />
+        <!-- Pupils -->
+        <g class="owl-pupil">
+            <circle cx="38" cy="50" r="6" fill="#212121" />
+            <circle cx="62" cy="50" r="6" fill="#212121" />
+        </g>
+    </g>
+    <!-- Beak Area -->
+    <path d="M47 58 L53 58 L50 64 Z" fill="#FFB300" />
+    <!-- Growing Wings (Small) -->
+    <path d="M18 58 Q10 40 25 50" fill="none" stroke="#795548" stroke-width="6" stroke-linecap="round" />
+    <path d="M82 58 Q90 40 75 50" fill="none" stroke="#795548" stroke-width="6" stroke-linecap="round" />
+    <!-- Paws -->
+    <circle cx="35" cy="118" r="8" fill="#FFB300" stroke="#795548" stroke-width="1.5" />
+    <circle cx="65" cy="118" r="8" fill="#FFB300" stroke="#795548" stroke-width="1.5" />
+</svg>

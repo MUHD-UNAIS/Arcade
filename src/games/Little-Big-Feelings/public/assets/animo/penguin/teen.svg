@@ -1,0 +1,30 @@
+<svg viewBox="0 0 100 130" xmlns="http://www.w3.org/2000/svg">
+    <!-- Playful Teen Penguin (Avatar 3 style with body) -->
+    <!-- Medium Body -->
+    <path d="M50 120 Q30 120 30 95 L30 75 Q30 60 50 60 Q70 60 70 75 L70 95 Q70 120 50 120 Z" fill="#263238" stroke="#37474F" stroke-width="2" />
+    <path d="M50 120 Q35 120 35 100 Q35 80 50 80 Q65 80 65 100 Q65 120 50 120 Z" fill="white" />
+    <!-- Small Flippers -->
+    <path d="M25 75 Q15 65 15 85 Q15 95 25 85" fill="#263238" stroke="#37474F" stroke-width="1.5" />
+    <path d="M75 75 Q85 65 85 85 Q85 95 75 85" fill="#263238" stroke="#37474F" stroke-width="1.5" />
+    <style>
+        .eye-blink { animation: blink 5s infinite; transform-origin: 50% 50px; }
+        @keyframes blink {
+            0%, 94%, 100% { transform: scaleY(1); }
+            97% { transform: scaleY(0.1); }
+        }
+    </style>
+
+    <!-- Head -->
+    <circle cx="50" cy="55" r="35" fill="#263238" />
+    <ellipse cx="50" cy="58" rx="22" ry="25" fill="white" />
+    <!-- Eyes (Blinking) -->
+    <g class="eye-blink">
+        <circle cx="38" cy="50" r="4.5" fill="#263238" />
+        <circle cx="62" cy="50" r="4.5" fill="#263238" />
+    </g>
+    <!-- Nose Area -->
+    <path d="M47 58 L53 58 L50 63 Z" fill="#FFA000" />
+    <!-- Paws -->
+    <circle cx="35" cy="118" r="8" fill="#FFA000" stroke="#EF6C00" stroke-width="1.5" />
+    <circle cx="65" cy="118" r="8" fill="#FFA000" stroke="#EF6C00" stroke-width="1.5" />
+</svg>

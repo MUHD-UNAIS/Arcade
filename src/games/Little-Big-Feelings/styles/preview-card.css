@@ -1,0 +1,96 @@
+/* ============================================================ 
+   CARD PREVIEW POPUP (Premium Inspection)
+   ============================================================ */
+.preview-card-wrap {
+    max-width: 500px;
+    width: 90%;
+    animation: previewSmoothEntrance 0.8s cubic-bezier(0.19, 1, 0.22, 1) both;
+}
+
+@keyframes previewSmoothEntrance {
+    from { 
+        transform: scale(0.6) translateY(40px) rotate(-2deg); 
+        opacity: 0; 
+        filter: blur(12px);
+    }
+    to { 
+        transform: scale(1) translateY(0) rotate(0); 
+        opacity: 1; 
+        filter: blur(0);
+    }
+}
+
+.premium-preview-card {
+    background: white;
+    border-radius: 40px;
+    padding: 2.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    border: 10px solid white;
+    box-shadow: 
+        0 30px 60px rgba(0,0,0,0.3),
+        0 0 0 10px rgba(255,255,255,0.2);
+    position: relative;
+    text-align: center;
+}
+
+.premium-preview-card.emotion { border-color: #E1F5FE; }
+.premium-preview-card.action { border-color: #FCE4EC; }
+
+.preview-label {
+    font-size: 0.85rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    padding: 0.5rem 1.5rem;
+    border-radius: 30px;
+    color: white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.premium-preview-card.emotion .preview-label { background: var(--blue); }
+.premium-preview-card.action .preview-label { background: var(--pink); }
+
+.preview-img-wrap {
+    width: 100%;
+    max-height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0;
+}
+
+.preview-img-wrap img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 15px 30px rgba(0,0,0,0.1));
+}
+
+.preview-info {
+    width: 100%;
+}
+
+.preview-name {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--text);
+    margin-bottom: 0.8rem;
+    line-height: 1.1;
+}
+
+.preview-desc {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #666;
+    line-height: 1.5;
+    opacity: 0.9;
+}
+
+.premium-preview-card .btn-primary {
+    margin-top: 1rem;
+    width: 100%;
+    padding: 1.2rem;
+}

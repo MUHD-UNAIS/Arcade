@@ -1,0 +1,67 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Inside depth gradients -->
+    <linearGradient id="mythInside" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#7c2d12;stop-opacity:1" /> <!-- Dark Orange -->
+      <stop offset="100%" style="stop-color:#f97316;stop-opacity:1" /> <!-- Myth Orange -->
+    </linearGradient>
+    <linearGradient id="factInside" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f766e;stop-opacity:1" /> <!-- Dark Teal -->
+      <stop offset="100%" style="stop-color:#14b8a6;stop-opacity:1" /> <!-- Fact Teal -->
+    </linearGradient>
+
+    <!-- ClipPath to keep stickman inside the front white card -->
+    <clipPath id="cardClip">
+      <rect x="80" y="40" width="300" height="400" rx="40" />
+    </clipPath>
+  </defs>
+
+  <!-- Professional Card Stack Approach -->
+  <!-- Bottom Card (Teal Dark) -->
+  <rect x="120" y="80" width="300" height="400" rx="40" fill="#064e3b" transform="rotate(-10, 256, 280)"/>
+  
+  <!-- Middle Card (Teal Medium) -->
+  <rect x="100" y="60" width="300" height="400" rx="40" fill="#0d9488" transform="rotate(-5, 256, 260)"/>
+  
+  <!-- Top Card (White) -->
+  <rect x="80" y="40" width="300" height="400" rx="40" fill="#ffffff" stroke="#0d9488" stroke-width="8"/>
+  
+  <!-- The Two Sorting Boxes (At Top) -->
+  <g transform="translate(100, 60)">
+    <g>
+      <rect x="15" y="5" width="85" height="85" rx="12" fill="#f97316"/>
+      <rect x="23" y="13" width="69" height="60" rx="8" fill="url(#mythInside)"/>
+    </g>
+    <g transform="translate(150, 80)">
+      <rect x="0" y="5" width="85" height="85" rx="12" fill="#14b8a6"/>
+      <rect x="8" y="13" width="69" height="60" rx="8" fill="url(#factInside)"/>
+    </g>
+  </g>
+
+  <!-- "Empty Stickman" Asset - Enlarged Portrait Version (Clipped to White Card) -->
+  <g clip-path="url(#cardClip)">
+    <g transform="translate(40, 220) scale(4)">
+      <!-- Body -->
+      <line x1="50" y1="35" x2="50" y2="55" stroke="black" stroke-width="3" stroke-linecap="round"/>
+      <!-- Head -->
+      <circle cx="50" cy="25" r="10" fill="none" stroke="black" stroke-width="3"/>
+      
+      <!-- Arms Shrugging -->
+      <path d="M50 45 Q30 45 25 30" fill="none" stroke="black" stroke-width="3" stroke-linecap="round"/>
+      <path d="M50 45 Q70 45 75 30" fill="none" stroke="black" stroke-width="3" stroke-linecap="round"/>
+      
+      <!-- Palms up -->
+      <path d="M23 30 Q25 28 27 30" fill="none" stroke="black" stroke-width="3" stroke-linecap="round"/>
+      <path d="M73 30 Q75 28 77 30" fill="none" stroke="black" stroke-width="3" stroke-linecap="round"/>
+
+      <!-- Face Confused -->
+      <circle cx="45" cy="23" r="1.5" fill="black"/>
+      <circle cx="55" cy="23" r="1.5" fill="black"/>
+      <line x1="47" y1="30" x2="53" y2="30" stroke="black" stroke-width="2" stroke-linecap="round"/>
+      
+      <!-- Question Marks (Orange Accent) -->
+      <path d="M30 15 Q35 10 35 15 Q35 20 32 22 M32 25 L32 26" stroke="#fbbf24" stroke-width="3" fill="none"/>
+      <path d="M70 15 Q75 10 75 15 Q75 20 72 22 M72 25 L72 26" stroke="#fbbf24" stroke-width="3" fill="none"/>
+    </g>
+  </g>
+</svg>

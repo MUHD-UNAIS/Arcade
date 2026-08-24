@@ -1,0 +1,35 @@
+<svg viewBox="0 0 100 130" xmlns="http://www.w3.org/2000/svg">
+    <!-- Curious Teen Elephant (Avatar 2 style with body) -->
+    <!-- Medium Body -->
+    <path d="M50 120 Q30 120 30 95 L30 75 Q30 60 50 60 Q70 60 70 75 L70 95 Q70 120 50 120 Z" fill="#BBDEFB" stroke="#90CAF9" stroke-width="2.5" />
+    <!-- Medium Ears -->
+    <ellipse cx="25" cy="55" rx="20" ry="25" fill="#90CAF9" />
+    <ellipse cx="75" cy="55" rx="20" ry="25" fill="#90CAF9" />
+    <style>
+        .eye-blink { animation: blink 5s infinite; transform-origin: 50% 50px; }
+        @keyframes blink {
+            0%, 94%, 100% { transform: scaleY(1); }
+            97% { transform: scaleY(0.1); }
+        }
+        .tail-wag { animation: wag 5s infinite ease-in-out; transform-origin: 75px 110px; }
+        @keyframes wag {
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(12deg); }
+        }
+    </style>
+
+    <!-- Head -->
+    <circle cx="50" cy="55" r="35" fill="#BBDEFB" />
+    <!-- Eyes (Blinking) -->
+    <g class="eye-blink">
+        <circle cx="40" cy="50" r="4.5" fill="#212121" />
+        <circle cx="60" cy="50" r="4.5" fill="#212121" />
+    </g>
+    <!-- Growing Trunk -->
+    <path d="M50 60 L50 80 Q50 90 40 90" fill="none" stroke="#BBDEFB" stroke-width="12" stroke-linecap="round" />
+    <!-- Paws -->
+    <circle cx="35" cy="115" r="10" fill="#BBDEFB" stroke="#90CAF9" stroke-width="2" />
+    <circle cx="65" cy="115" r="10" fill="#BBDEFB" stroke="#90CAF9" stroke-width="2" />
+    <!-- Elephant Tail -->
+    <path class="tail-wag" d="M75 110 Q85 110 85 100" fill="none" stroke="#BBDEFB" stroke-width="4" stroke-linecap="round" />
+</svg>

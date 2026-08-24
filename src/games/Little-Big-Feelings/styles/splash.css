@@ -1,0 +1,324 @@
+#screen-splash {
+    justify-content: center;
+    overflow-y: hidden;
+    background: radial-gradient(circle at 50% 50%, #FFF9E6 0%, #FFF0F5 50%, #F0F4FF 100%);
+    position: relative;
+    transition: background 1s ease;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+}
+
+.splash-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(0.5rem, 2.5vh, 1.2rem);
+    position: relative;
+    z-index: 10;
+    max-width: 600px;
+    width: 100%;
+    margin: 0;
+}
+
+/* Background Decorative Icons */
+.splash-background-elements {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.floating-shape {
+    position: absolute;
+    color: rgba(0, 0, 0, 0.08);
+    font-size: 1.5rem;
+    filter: blur(1px);
+    animation: float-around var(--duration, 15s) ease-in-out infinite alternate;
+}
+
+.shape-1 {
+    top: 15%;
+    left: 10%;
+    --duration: 18s;
+    transform: rotate(15deg);
+    color: var(--pink);
+    opacity: 0.15;
+}
+
+.shape-2 {
+    top: 25%;
+    right: 12%;
+    --duration: 22s;
+    transform: rotate(-20deg);
+    color: var(--blue);
+    opacity: 0.15;
+}
+
+.shape-3 {
+    bottom: 30%;
+    left: 15%;
+    --duration: 20s;
+    transform: rotate(10deg);
+    color: var(--yellow);
+    opacity: 0.15;
+}
+
+.shape-4 {
+    bottom: 15%;
+    right: 10%;
+    --duration: 25s;
+    transform: rotate(-15deg);
+    color: var(--green);
+    opacity: 0.15;
+}
+
+.shape-5 {
+    top: 50%;
+    left: 5%;
+    --duration: 30s;
+    color: var(--orange);
+    opacity: 0.12;
+}
+
+.shape-6 {
+    top: 60%;
+    right: 5%;
+    --duration: 28s;
+    color: var(--purple);
+    opacity: 0.12;
+}
+
+.shape-7 {
+    bottom: 40%;
+    right: 15%;
+    --duration: 24s;
+    color: var(--blue-dark);
+    opacity: 0.12;
+}
+
+.shape-8 {
+    top: 40%;
+    left: 12%;
+    --duration: 19s;
+    color: var(--pink-dark);
+    opacity: 0.1;
+}
+
+.shape-9 {
+    top: 5%;
+    right: 30%;
+    --duration: 32s;
+    color: var(--yellow);
+    opacity: 0.15;
+}
+
+
+/* Logo Wrapper & Burst */
+.logo-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+}
+
+.logo-burst {
+    position: absolute;
+    width: clamp(250px, 70vw, 400px);
+    height: clamp(250px, 70vw, 400px);
+    background: radial-gradient(circle,
+            rgba(255, 128, 171, 0.4) 0%,
+            rgba(129, 212, 250, 0.3) 40%,
+            transparent 70%);
+    border-radius: 50%;
+    animation: pulse-glow 4s ease-in-out infinite, rotate-glow 20s linear infinite;
+    z-index: -1;
+    filter: blur(20px);
+}
+
+@keyframes rotate-glow {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.logo-container {
+    position: relative;
+    z-index: 2;
+}
+
+.game-logo {
+    width: clamp(200px, 45vw, 360px);
+    filter: drop-shadow(0 20px 40px rgba(186, 104, 200, 0.4));
+    animation: bounce-float 4s var(--spring) infinite;
+    transition: transform 0.3s var(--spring);
+}
+
+.game-logo:hover {
+    transform: scale(1.05);
+}
+
+/* Title & Tagline */
+.title-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.game-title {
+    font-size: clamp(3.5rem, 8vw, 6rem);
+    font-weight: 800;
+    line-height: 0.85;
+    color: var(--pink);
+    text-shadow:
+        4px 4px 0px var(--white),
+        8px 8px 0px rgba(0, 0, 0, 0.05);
+    transform: rotate(-3deg);
+    transition: transform 0.3s ease;
+}
+
+.game-title:hover {
+    transform: rotate(0deg) scale(1.05);
+}
+
+.game-title span {
+    color: var(--blue);
+    font-size: 85%;
+    display: block;
+    margin-top: -10px;
+}
+
+.tagline {
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    font-weight: 600;
+    color: var(--text);
+    opacity: 0.85;
+    background: var(--glass);
+    padding: 0.5rem 1.5rem;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    margin-top: 1rem;
+}
+
+/* Action Button */
+.splash-actions {
+    margin-top: 1rem;
+}
+
+.pulse-btn {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-icon-inline {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s var(--spring);
+}
+
+.pulse-btn:hover .btn-icon-inline {
+    transform: translateX(5px) scale(1.2);
+}
+
+.pulse-btn::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transform: rotate(45deg);
+    animation: shine-btn 4s infinite;
+}
+
+/* Footer Credit */
+.splash-footer {
+    margin-top: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.splash-credit {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #888;
+    background: rgba(0, 0, 0, 0.03);
+    padding: 0.4rem 1.2rem;
+    border-radius: 20px;
+}
+
+.brand-dots {
+    display: flex;
+    gap: 10px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    animation: dot-pulse 2s infinite;
+}
+
+.dot.pink {
+    background-color: var(--pink);
+    animation-delay: 0s;
+}
+
+.dot.blue {
+    background-color: var(--blue);
+    animation-delay: 0.3s;
+}
+
+.dot.yellow {
+    background-color: var(--yellow);
+    animation-delay: 0.6s;
+}
+
+/* Mobile Adjustments for Cuteness */
+@media (max-width: 600px) {
+    #screen-splash {
+        background: radial-gradient(circle at 50% 50%, #FFF9E6 0%, #FFF0F5 70%, #F0F4FF 120%);
+    }
+
+    .floating-shape {
+        font-size: 3.5rem;
+        opacity: 0.25 !important;
+        filter: blur(0.5px);
+    }
+
+    .game-title {
+        font-size: clamp(3.8rem, 15vw, 5.5rem);
+        text-shadow:
+            3px 3px 0px var(--white),
+            6px 6px 0px rgba(0, 0, 0, 0.05);
+    }
+
+    .logo-burst {
+        width: 100vw;
+        height: 100vw;
+        opacity: 0.4;
+    }
+
+    .game-logo {
+        width: 75vw;
+        max-width: 320px;
+    }
+
+    .tagline {
+        font-size: 1.1rem;
+        padding: 0.4rem 1.2rem;
+        background: rgba(255, 255, 255, 0.7);
+    }
+}

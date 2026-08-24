@@ -1,0 +1,30 @@
+{
+  "name": "Signal Scout",
+  "short_name": "SignalScout",
+  "description": "Urban Compassion System: Identifying silent distress signals.",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0f172a",
+  "theme_color": "#f97316",
+  "icons": [
+    {
+      "src": "/brand/logo.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": [
+    "games",
+    "education"
+  ],
+  "screenshots": [
+    {
+      "src": "/brand/1.jpg",
+      "sizes": "1080x1080",
+      "type": "image/jpeg",
+      "form_factor": "wide"
+    }
+  ]
+}

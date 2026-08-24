@@ -1,0 +1,37 @@
+<svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
+    <!-- Tiny Baby Kitten (Avatar 5 style) -->
+    <!-- Small Round Body -->
+    <path d="M50 110 Q35 110 30 95 Q30 80 50 80 Q70 80 70 95 Q70 110 50 110 Z" fill="#FF8A65" stroke="#FFAB91" stroke-width="2" />
+    <path d="M50 110 Q42 110 40 100 Q40 90 50 90 Q60 90 60 100 Q60 110 50 110 Z" fill="white" opacity="0.4" /> <!-- belly -->
+    <!-- Small Pointy Ears -->
+    <path d="M30 40 L45 55 L25 60 Z" fill="#FFAB91" />
+    <path d="M70 40 L55 55 L75 60 Z" fill="#FFAB91" />
+    <style>
+        .eye-blink { animation: blink 5s infinite; transform-origin: 50% 60px; }
+        @keyframes blink {
+            0%, 94%, 100% { transform: scaleY(1); }
+            97% { transform: scaleY(0.1); }
+        }
+        .tail-wag { animation: wag 3s infinite ease-in-out; transform-origin: 70px 100px; }
+        @keyframes wag {
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(12deg); }
+        }
+    </style>
+
+    <!-- Head -->
+    <circle cx="50" cy="65" r="28" fill="#FF8A65" />
+    <!-- Eyes (Blinking) -->
+    <g class="eye-blink">
+        <circle cx="42" cy="60" r="5" fill="#5D4037" />
+        <circle cx="58" cy="60" r="5" fill="#5D4037" />
+        <circle cx="44" cy="58" r="2" fill="white" />
+        <circle cx="60" cy="58" r="2" fill="white" />
+    </g>
+    <!-- Tiny Pink Nose -->
+    <circle cx="50" cy="68" r="2" fill="#D81B60" />
+    <!-- Tiny Mouth -->
+    <path d="M48 71 Q50 73 52 71" stroke="#5D4037" stroke-width="1" fill="none" stroke-linecap="round" />
+    <!-- Tiny Tail -->
+    <path class="tail-wag" d="M70 100 Q80 100 78 90" fill="none" stroke="#FF8A65" stroke-width="4" stroke-linecap="round" />
+</svg>

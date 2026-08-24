@@ -1,0 +1,40 @@
+<svg viewBox="0 0 100 130" xmlns="http://www.w3.org/2000/svg">
+    <!-- Playful Teen Puppy (Avatar 6 style with body) -->
+    <!-- Medium Body -->
+    <path d="M50 120 Q30 120 30 95 L30 75 Q30 60 50 60 Q70 60 70 75 L70 95 Q70 120 50 120 Z" fill="#A1887F" stroke="#795548" stroke-width="2.5" />
+    <path d="M50 120 Q35 120 35 100 Q35 80 50 80 Q65 80 65 100 Q65 120 50 120 Z" fill="white" opacity="0.3" /> <!-- belly -->
+    <!-- Medium Floppy Ears -->
+    <path d="M25 40 Q15 40 15 65" stroke="#795548" stroke-width="12" stroke-linecap="round" fill="none" />
+    <path d="M75 40 Q85 40 85 65" stroke="#795548" stroke-width="12" stroke-linecap="round" fill="none" />
+    <style>
+        .eye-blink { animation: blink 5s infinite; transform-origin: 50% 50px; }
+        @keyframes blink {
+            0%, 94%, 100% { transform: scaleY(1); }
+            97% { transform: scaleY(0.1); }
+        }
+        .tail-wag { animation: wag 2s infinite ease-in-out; transform-origin: 75px 105px; }
+        @keyframes wag {
+            0%, 50%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(15deg); }
+            75% { transform: rotate(-5deg); }
+        }
+    </style>
+
+    <!-- Head -->
+    <circle cx="50" cy="55" r="35" fill="#A1887F" />
+    <!-- Eyes (Blinking) -->
+    <g class="eye-blink">
+        <circle cx="40" cy="50" r="4.5" fill="#212121" />
+        <circle cx="60" cy="50" r="4.5" fill="#212121" />
+    </g>
+    <!-- Growing Tongue -->
+    <path d="M46 72 Q50 82 54 72" fill="#FF80AB" />
+    <!-- Tail (Wagging) -->
+    <path class="tail-wag" d="M75 105 Q90 95 85 85" fill="none" stroke="#A1887F" stroke-width="6" stroke-linecap="round" />
+    <!-- Paws -->
+    <circle cx="35" cy="118" r="10" fill="#A1887F" stroke="#795548" stroke-width="2" />
+    <circle cx="65" cy="118" r="10" fill="#A1887F" stroke="#795548" stroke-width="2" />
+    <!-- Arms -->
+    <circle cx="25" cy="95" r="8" fill="#A1887F" stroke="#795548" stroke-width="1.5" />
+    <circle cx="75" cy="95" r="8" fill="#A1887F" stroke="#795548" stroke-width="1.5" />
+</svg>

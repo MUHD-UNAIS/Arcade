@@ -1,0 +1,41 @@
+<svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
+    <!-- Tiny Baby Panda (Avatar 4 style) -->
+    <!-- Small Round Body -->
+    <path d="M50 110 Q35 110 30 95 Q30 80 50 80 Q70 80 70 95 Q70 110 50 110 Z" fill="white" stroke="#212121" stroke-width="2" />
+    <path d="M50 110 Q42 110 40 100 Q40 90 50 90 Q60 90 60 100 Q60 110 50 110 Z" fill="#212121" opacity="0.1" /> <!-- belly -->
+    <!-- Small Black Ears -->
+    <circle cx="28" cy="48" r="8" fill="#212121" />
+    <circle cx="72" cy="48" r="8" fill="#212121" />
+    <style>
+        .eye-blink { animation: blink 5s infinite; transform-origin: 50% 52px; }
+        @keyframes blink {
+            0%, 94%, 100% { transform: scaleY(1); }
+            97% { transform: scaleY(0.1); }
+        }
+        .tail-wag { animation: wag 3s infinite ease-in-out; transform-origin: 68px 105px; }
+        @keyframes wag {
+            0%, 100% { transform: rotate(0deg); }
+            50% { transform: rotate(15deg); }
+        }
+    </style>
+
+    <!-- Head -->
+    <circle cx="50" cy="55" r="32" fill="white" stroke="#E0E0E0" stroke-width="1.5" />
+    <!-- Eyes (Blinking) -->
+    <g class="eye-blink">
+        <!-- Big Sparkly Eyes (Panda Patches) -->
+        <ellipse cx="42" cy="52" rx="6" ry="7" fill="#212121" />
+        <ellipse cx="58" cy="52" rx="6" ry="7" fill="#212121" />
+        <circle cx="42" cy="52" r="2.5" fill="white" />
+        <circle cx="58" cy="52" r="2.5" fill="white" />
+    </g>
+    <!-- Tiny Nose -->
+    <circle cx="50" cy="62" r="2" fill="#212121" />
+    <!-- 4 Little Black Paws -->
+    <circle cx="35" cy="112" r="8" fill="#212121" />
+    <circle cx="65" cy="112" r="8" fill="#212121" />
+    <circle cx="28" cy="95" r="7" fill="#212121" />
+    <circle cx="72" cy="95" r="7" fill="#212121" />
+    <!-- Panda Tail -->
+    <circle class="tail-wag" cx="68" cy="105" r="6" fill="#212121" />
+</svg>

@@ -1,0 +1,83 @@
+/* ============================================================
+   ICON STYLING
+   ============================================================ */
+.lucide {
+    width: 1.5em;
+    height: 1.5em;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    vertical-align: middle;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.05));
+    transition: transform 0.2s, filter 0.2s;
+}
+
+.btn-icon:hover .lucide {
+    transform: scale(1.1);
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+}
+
+.ui-star {
+    width: 32px;
+    height: 32px;
+    margin: 0 4px;
+    stroke-width: 2.5;
+}
+
+.star-active {
+    color: var(--yellow);
+    fill: var(--yellow);
+    filter: drop-shadow(0 0 12px rgba(255, 213, 79, 0.5));
+}
+
+.star-inactive {
+    color: #E0E0E0;
+    fill: #F5F5F5;
+}
+
+.btn-img-icon {
+    width: 20px !important;
+    height: 20px !important;
+    margin-left: 8px;
+}
+
+.plus-icon-img {
+    width: 40px;
+    height: 40px;
+    margin: 0 1rem;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+}
+
+.breathing-emoji {
+    width: 80px !important;
+    height: 80px !important;
+    color: white;
+}
+
+.ui-btn-icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+/* HUD Button Badge */
+.btn-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: var(--pink);
+    color: white;
+    font-size: 0.65rem;
+    font-weight: 800;
+    min-width: 18px;
+    height: 18px;
+    padding: 0 4px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn-icon:disabled .btn-badge { background: #ccc; }

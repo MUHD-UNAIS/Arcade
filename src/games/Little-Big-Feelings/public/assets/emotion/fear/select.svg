@@ -1,0 +1,14 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Card Base -->
+  <rect x="10" y="10" width="180" height="180" rx="30" fill="white" stroke="#9C27B0" stroke-width="4" />
+  <!-- Fear Face -->
+  <circle cx="100" cy="100" r="70" fill="#9C27B0" />
+  <!-- Wide Eyes -->
+  <circle cx="75" cy="100" r="15" fill="white" />
+  <circle cx="125" cy="100" r="15" fill="white" />
+  <!-- Pupils (Small and fearful) -->
+  <circle cx="75" cy="100" r="5" fill="#9C27B0" />
+  <circle cx="125" cy="100" r="5" fill="#9C27B0" />
+  <!-- Wobbly Mouth -->
+  <path d="M70 145 Q85 135 100 145 T130 145" stroke="white" stroke-width="8" stroke-linecap="round" fill="none" />
+</svg>

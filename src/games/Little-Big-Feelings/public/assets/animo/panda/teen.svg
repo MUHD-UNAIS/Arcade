@@ -1,0 +1,33 @@
+<svg viewBox="0 0 100 130" xmlns="http://www.w3.org/2000/svg">
+    <!-- Playful Teen Panda (Avatar 4 style with body) -->
+    <!-- Medium Body -->
+    <path d="M50 120 Q30 120 30 95 L30 75 Q30 60 50 60 Q70 60 70 75 L70 95 Q70 120 50 120 Z" fill="white" stroke="#212121" stroke-width="2.5" />
+    <!-- Medium Black Ears -->
+    <circle cx="25" cy="45" r="10" fill="#212121" />
+    <circle cx="75" cy="45" r="10" fill="#212121" />
+    <style>
+        .eye-blink { animation: blink 5s infinite; transform-origin: 50% 52px; }
+        @keyframes blink {
+            0%, 94%, 100% { transform: scaleY(1); }
+            97% { transform: scaleY(0.1); }
+        }
+    </style>
+
+    <!-- Head -->
+    <circle cx="50" cy="55" r="38" fill="white" stroke="#E0E0E0" stroke-width="2" />
+    <!-- Eyes (Blinking) -->
+    <g class="eye-blink">
+        <ellipse cx="38" cy="52" rx="9" ry="11" fill="#212121" />
+        <ellipse cx="62" cy="52" rx="9" ry="11" fill="#212121" />
+        <circle cx="38" cy="52" r="3.5" fill="white" />
+        <circle cx="62" cy="52" r="3.5" fill="white" />
+    </g>
+    <!-- Nose Area -->
+    <circle cx="50" cy="65" r="3" fill="#212121" />
+    <!-- Black Arms (Curved) -->
+    <path d="M25 70 Q15 65 15 85 Q15 95 25 85" fill="#212121" />
+    <path d="M75 70 Q85 65 85 85 Q85 95 75 85" fill="#212121" />
+    <!-- Paws -->
+    <circle cx="35" cy="118" r="10" fill="#212121" />
+    <circle cx="65" cy="118" r="10" fill="#212121" />
+</svg>

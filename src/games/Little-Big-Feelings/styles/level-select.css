@@ -1,0 +1,193 @@
+.level-top-bar {
+    width: 100%;
+    max-width: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+    margin-bottom: 1.2rem;
+    animation: fadeSlideDown 0.6s var(--ease) both;
+}
+
+.level-top-right {
+    display: flex;
+    gap: 1rem;
+}
+
+.player-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: white;
+    padding: 0.5rem 1rem;
+    border-radius: 30px;
+    box-shadow: 0 4px 12px var(--shadow);
+    border: 3px solid var(--pink);
+    transition: transform 0.3s var(--spring);
+}
+
+.player-badge:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.player-badge-avatar {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.player-badge-name {
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--text);
+}
+
+.settings-gear {
+    font-size: 1.5rem;
+    background: white;
+    border: none;
+    box-shadow: 0 4px 12px var(--shadow);
+    transition: var(--transition);
+}
+
+.settings-gear:hover {
+    transform: rotate(60deg) scale(1.1);
+}
+
+#screen-level {
+    justify-content: flex-start;
+    padding-top: 1rem;
+    gap: 0.5rem;
+}
+
+.level-select-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(1rem, 3vh, 2rem);
+    padding: 0 0 3rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.level-select-container h2 {
+    font-size: clamp(2.2rem, 6vw, 3.8rem);
+    background: linear-gradient(135deg, var(--orange), var(--pink-dark));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.2rem;
+    animation: pop-in 0.8s var(--spring) both;
+}
+
+.level-intro {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text);
+    opacity: 0.7;
+    margin-bottom: 1.5rem;
+    animation: fadeSlideUp 0.8s var(--ease) 0.2s both;
+}
+
+.level-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+    gap: 2rem;
+    width: 90%;
+    max-width: 1100px;
+    padding: 1rem;
+    margin: 0 auto;
+}
+
+.level-btn {
+    position: relative;
+    background: var(--white);
+    border-radius: 30px;
+    padding: clamp(1.5rem, 4vh, 3rem) 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05), 0 6px 0 #F0F0F0;
+    transition: all 0.5s var(--spring);
+    border: 3px solid transparent;
+    cursor: pointer;
+    overflow: hidden;
+    width: clamp(250px, 25vw, 350px);
+    animation: cardEntrance 0.8s var(--spring) both;
+}
+
+.level-btn::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at bottom left, var(--level-color), transparent 70%);
+    opacity: 0.05;
+}
+
+.level-btn[data-level="1"] { --level-color: var(--green); animation-delay: 0.1s; }
+.level-btn[data-level="2"] { --level-color: var(--yellow); animation-delay: 0.2s; }
+.level-btn[data-level="3"] { --level-color: var(--orange); animation-delay: 0.3s; }
+
+.level-btn:hover {
+    transform: translateY(-15px);
+    border-color: var(--level-color);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1), 0 10px 0 var(--level-color);
+}
+
+.level-icon {
+    width: 90px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.03);
+    border-radius: 50%;
+    margin-bottom: 0.5rem;
+    transition: transform 0.5s var(--spring);
+    animation: idleFloat 5s ease-in-out infinite;
+}
+
+.level-btn:hover .level-icon {
+    transform: scale(1.2) rotate(10deg);
+    background: white;
+}
+
+.level-name {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--text);
+    transition: color 0.3s ease;
+}
+
+.level-btn:hover .level-name { color: var(--level-color); }
+
+.level-detail {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #888;
+    line-height: 1.4;
+}
+
+.level-best {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #BBB;
+    padding: 0.4rem 1rem;
+    background: rgba(0, 0, 0, 0.03);
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.level-best-filled {
+    background: rgba(255, 213, 79, 0.15);
+    color: var(--yellow);
+    filter: drop-shadow(0 1px 2px rgba(255, 213, 79, 0.5));
+}

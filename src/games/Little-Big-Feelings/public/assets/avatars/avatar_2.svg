@@ -1,0 +1,27 @@
+<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Elephant 🐘 - Fixed with better ears and trunk -->
+  <!-- Ears: Large floppy shapes behind the head -->
+  <ellipse cx="25" cy="50" rx="20" ry="25" fill="#90CAF9" />
+  <ellipse cx="75" cy="50" rx="20" ry="25" fill="#90CAF9" />
+  <ellipse cx="28" cy="50" rx="12" ry="18" fill="#BBDEFB" /> <!-- Inner ear -->
+  <ellipse cx="72" cy="50" rx="12" ry="18" fill="#BBDEFB" /> <!-- Inner ear -->
+
+  <!-- Head -->
+  <circle cx="50" cy="50" r="32" fill="#BBDEFB" />
+
+  <!-- Eyes -->
+  <circle cx="40" cy="45" r="4" fill="#212121" />
+  <circle cx="60" cy="45" r="4" fill="#212121" />
+  <!-- Eye highlights -->
+  <circle cx="41" cy="43" r="1.5" fill="white" />
+  <circle cx="61" cy="43" r="1.5" fill="white" />
+
+  <!-- Trunk: More elephant-like curve -->
+  <path d="M50 55 L50 70 Q50 85 35 85" stroke="#BBDEFB" stroke-width="12" stroke-linecap="round" fill="none" />
+  <!-- Trunk detail lines -->
+  <path d="M46 62 L54 62 M46 67 L54 67" stroke="#90CAF9" stroke-width="2" stroke-linecap="round" />
+
+  <!-- Blush -->
+  <circle cx="25" cy="55" r="4" fill="#FFAB91" opacity="0.4" />
+  <circle cx="75" cy="55" r="4" fill="#FFAB91" opacity="0.4" />
+</svg>

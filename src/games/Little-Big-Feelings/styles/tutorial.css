@@ -1,0 +1,183 @@
+.tutorial-container {
+    max-width: 1400px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    animation: fadeSlideUp 0.8s var(--ease) both;
+}
+
+.tutorial-header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 0;
+}
+
+.tutorial-titles {
+    flex: 1;
+    text-align: center;
+}
+
+.tutorial-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(1rem, 2.5vw, 2rem);
+    width: 100%;
+    margin-bottom: 0.5rem;
+}
+
+.tutorial-step {
+    background: var(--white);
+    padding: clamp(1.5rem, 4vh, 3rem) 1.5rem;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05), 0 6px 0 #F0F0F0;
+    transition: all 0.5s var(--spring);
+    cursor: default;
+    position: relative;
+    border: 3px solid transparent;
+    animation: cardEntrance 0.8s var(--spring) both;
+}
+
+.tutorial-step:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08), 0 10px 0 var(--step-color);
+    border-color: var(--step-color);
+}
+
+.tutorial-step[data-step="1"] { --step-color: var(--blue); animation-delay: 0.1s; }
+.tutorial-step[data-step="2"] { --step-color: var(--pink); animation-delay: 0.2s; }
+.tutorial-step[data-step="3"] { --step-color: var(--yellow); animation-delay: 0.3s; }
+
+.step-num-badge {
+    position: absolute;
+    top: -15px;
+    background: var(--step-color);
+    color: white;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 1.2rem;
+    border: 4px solid white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.step-icon-wrap {
+    width: 80px;
+    height: 80px;
+    background: rgba(0, 0, 0, 0.02);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.5s var(--spring);
+    animation: idleFloat 6s ease-in-out infinite;
+}
+
+.tutorial-step:hover .step-icon-wrap {
+    transform: scale(1.2) rotate(10deg);
+    background: white;
+}
+
+.tutorial-step p {
+    text-align: center;
+    font-size: clamp(0.9rem, 1.2vw, 1.1rem);
+    line-height: 1.5;
+    font-weight: 600;
+    color: var(--text);
+    opacity: 0.9;
+}
+
+.highlight-blue { border-bottom: 3px solid var(--blue); }
+.highlight-pink { border-bottom: 3px solid var(--pink); }
+.highlight-yellow { border-bottom: 3px solid var(--yellow); }
+
+.tutorial-footer {
+    animation: fadeSlideUp 0.8s var(--ease) 0.5s both;
+    margin-bottom: 3rem;
+}
+
+/* A-Z Game Tutorial Overlays */
+.az-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+
+.az-modal {
+    background: white;
+    padding: 3rem;
+    border-radius: 40px;
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+    animation: pop-in 0.5s var(--spring);
+}
+
+.az-tutorial-preview {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.tutorial-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 800;
+    color: var(--pink-dark);
+}
+
+.tutorial-item i {
+    width: 48px;
+    height: 48px;
+    background: #FCE4EC;
+    padding: 10px;
+    border-radius: 12px;
+}
+
+.az-tutorial-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.az-tutorial-dots .dot {
+    width: 10px;
+    height: 10px;
+    background: #EEEEEE;
+    border-radius: 50%;
+    transition: var(--transition);
+}
+
+.az-tutorial-dots .dot.active {
+    background: var(--pink);
+    transform: scale(1.5);
+}
+
+.az-tutorial-content h3 {
+    margin-bottom: 1rem;
+    color: var(--pink-dark);
+}

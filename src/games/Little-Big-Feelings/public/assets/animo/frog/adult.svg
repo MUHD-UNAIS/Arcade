@@ -1,0 +1,37 @@
+<svg viewBox="0 0 100 150" xmlns="http://www.w3.org/2000/svg">
+    <!-- Majestic Adult Frog (Avatar 9 style with body) -->
+    <!-- Large Rounded Body -->
+    <rect x="15" y="70" width="70" height="70" rx="35" fill="#A5D6A7" stroke="#1B5E20" stroke-width="3" />
+    <ellipse cx="50" cy="110" rx="35" ry="30" fill="#E8F5E9" /> <!-- white belly -->
+    
+    <!-- Large Round Eyes (Based on Avatar 9) -->
+    <circle cx="35" cy="30" r="15" fill="#81C784" />
+    <circle cx="65" cy="30" r="15" fill="#81C784" />
+    <style>
+        .eye-blink { animation: blink 5s infinite; transform-origin: 50% 30px; }
+        @keyframes blink {
+            0%, 94%, 100% { transform: scaleY(1); }
+            97% { transform: scaleY(0.1); }
+        }
+    </style>
+
+    <!-- Head (Based on Avatar 9) -->
+    <ellipse cx="50" cy="60" rx="45" ry="35" fill="#A5D6A7" />
+    <!-- Eyes (Blinking) -->
+    <g class="eye-blink">
+        <circle cx="35" cy="30" r="8" fill="white" />
+        <circle cx="65" cy="30" r="8" fill="white" />
+        <circle cx="35" cy="30" r="4" fill="#1B5E20" />
+        <circle cx="65" cy="30" r="4" fill="#1B5E20" />
+    </g>
+    <!-- Wide Mouth (Based on Avatar 9) -->
+    <path d="M25 65 Q50 85 75 65" stroke="#1B5E20" stroke-width="4" stroke-linecap="round" fill="none" />
+    
+    <!-- Large Jumping Back Legs -->
+    <path d="M15 110 Q-5 80 10 140" fill="none" stroke="#1B5E20" stroke-width="12" stroke-linecap="round" />
+    <path d="M85 110 Q105 80 90 140" fill="none" stroke="#1B5E20" stroke-width="12" stroke-linecap="round" />
+    
+    <!-- Sturdy Green Feet -->
+    <circle cx="20" cy="140" r="12" fill="#A5D6A7" stroke="#1B5E20" stroke-width="2" />
+    <circle cx="80" cy="140" r="12" fill="#A5D6A7" stroke="#1B5E20" stroke-width="2" />
+</svg>

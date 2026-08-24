@@ -1,0 +1,67 @@
+/* ============================================================ */
+/*  styles/accessibility.css — Global Accessibility Classes      */
+/* ============================================================ */
+
+/* 1. Reduced Motion */
+:root.a11y-reduced-motion *, 
+:root.a11y-reduced-motion *::before, 
+:root.a11y-reduced-motion *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+}
+
+/* 2. Dyslexic Font */
+:root.a11y-dyslexic-font {
+    --font-primary: 'Comic Sans MS', 'Comic Sans', cursive, sans-serif;
+}
+:root.a11y-dyslexic-font * {
+    font-family: var(--font-primary) !important;
+    letter-spacing: 0.05em !important;
+    word-spacing: 0.1em !important;
+}
+
+/* 3. High Contrast */
+:root.a11y-high-contrast {
+    --bg-main: #FFFFFF;
+    --text-main: #000000;
+    --accent-main: #0000FF;
+    filter: contrast(1.2);
+}
+
+:root.a11y-high-contrast .screen {
+    background-image: none !important;
+    background-color: var(--bg-main) !important;
+}
+
+:root.a11y-high-contrast .btn-primary, 
+:root.a11y-high-contrast .btn-secondary, 
+:root.a11y-high-contrast .toggle-btn.toggle-on {
+    background: #000000 !important;
+    color: #FFFFFF !important;
+    border: 3px solid #000000 !important;
+}
+
+/* 4. Focus States (Keyboard/Switch Access) */
+:focus-visible {
+    outline: 4px solid #0000FF !important;
+    outline-offset: 4px !important;
+    box-shadow: 0 0 0 8px rgba(0, 0, 255, 0.2) !important;
+}
+
+.a11y-high-contrast :focus-visible {
+    outline: 6px solid #000000 !important;
+    box-shadow: 0 0 0 10px #FFFFFF !important;
+}
+
+/* 5. Speaking Animation (A11y Visual Indicator) */
+@keyframes speaking-pulse {
+    0% { outline: 0px solid rgba(255,128,171,0.5); }
+    50% { outline: 10px solid rgba(255,128,171,0.2); }
+    100% { outline: 0px solid rgba(255,128,171,0.5); }
+}
+.speaking {
+    animation: speaking-pulse 1.5s infinite;
+    position: relative;
+    z-index: 1000;
+}

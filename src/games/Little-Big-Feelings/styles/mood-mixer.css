@@ -1,0 +1,636 @@
+/* ============================================================ */
+/*  styles/mood-mixer.css — The Feeling Fusion Lab UI           */
+/* ============================================================ */
+
+#screen-mood-mixer {
+    background: url('/assets/feeling_fusion/fusion_bg.svg') center/cover no-repeat fixed;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    /* STOP THE SCROLL */
+}
+
+.mood-mixer-container {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* Center the lab bench vertically */
+    gap: 0.5rem;
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.mixer-header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.mixer-card {
+    background: #263238;
+    /* Dark Industrial Slate */
+    border-radius: 40px;
+    min-height: 85vh;
+    padding: 2rem 3rem;
+    width: 95%;
+    max-width: 1550px;
+    /* Tighter for no scroll */
+    margin-top: -1rem;
+    /* Pull slightly up */
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.4), inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+    border: 4px solid #455A64;
+    position: relative;
+    overflow: hidden;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.mixer-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath d='M0 50L100 50M50 0L50 100' stroke='rgba(255,255,255,0.05)' stroke-width='1'/%3E%3C/svg%3E");
+    pointer-events: none;
+}
+
+/* Slot area */
+.mixer-slots {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.slot-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    width: 100px;
+}
+
+.slot-label {
+    font-size: 1.1rem;
+    font-weight: 900;
+    color: #90A4AE;
+    text-align: center;
+    width: 100%;
+    margin-top: 5px;
+    letter-spacing: 0.5px;
+    text-transform: capitalize;
+}
+
+.plus-symbol {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #81D4FA;
+    filter: drop-shadow(0 0 15px rgba(129, 212, 250, 0.6));
+    animation: bouncePop 2s infinite ease-in-out;
+}
+
+.mixer-slot {
+    width: 150px;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: transparent;
+    transition: all 0.4s var(--spring);
+}
+
+/* Erlenmeyer Flask Shape using Clip Path */
+.flask-container {
+    position: absolute;
+    inset: 0;
+    clip-path: polygon(44% 0%, 56% 0%, 56% 35%, 100% 100%, 0% 100%, 44% 35%);
+    background: rgba(255, 255, 255, 0.15);
+    /* Subtle glass look on dark */
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    border-radius: 0 0 25px 25px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column-reverse;
+    /* Fill from bottom */
+    box-shadow: inset 0 -15px 30px rgba(255, 255, 255, 0.05);
+}
+
+.flask-liquid {
+    width: 100%;
+    height: 0%;
+    /* Start empty */
+    background: var(--liquid-color, #E0E0E0);
+    transition: height 1s var(--spring), background 0.5s ease;
+    position: relative;
+    opacity: 0.85;
+}
+
+/* Bubbles inside liquid */
+.flask-liquid::before {
+    content: '...';
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 2rem;
+    letter-spacing: 5px;
+    animation: bubbling 2s infinite ease-in-out;
+    opacity: 0.6;
+}
+
+@keyframes bubbling {
+    0% {
+        transform: translate(-50%, 20px) scale(0.5);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translate(-50%, -60px) scale(1.5);
+        opacity: 0;
+    }
+}
+
+.mixer-slot img {
+    width: 60px;
+    height: 60px;
+    z-index: 10;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+    position: absolute;
+    bottom: 25px;
+    opacity: 0;
+    transform: scale(0.5);
+    transition: all 0.6s var(--spring);
+    pointer-events: none;
+}
+
+.mixer-slot.occupied img {
+    opacity: 1;
+    transform: scale(1) translateY(-5px);
+}
+
+.mixer-slot.occupied .flask-liquid {
+    height: 80%;
+}
+
+.lab-main-area {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-areas:
+        "L F R"
+        "L C R";
+    align-items: center;
+    justify-items: center;
+    width: 100%;
+    gap: 4.5rem;
+    padding: 0 1.5rem;
+}
+
+.side-left {
+    grid-area: L;
+    justify-self: end;
+}
+
+.lab-flask-area {
+    grid-area: F;
+    align-self: end;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 3.5rem;
+}
+
+.side-right {
+    grid-area: R;
+    justify-self: start;
+}
+
+.lab-controls {
+    grid-area: C;
+    align-self: start;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.lab-side-choices {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+
+.side-label {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #81D4FA;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.choice-grid-2x4 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem;
+}
+
+/* Override bubble size for side matrix */
+.lab-side-choices .choice-bubble {
+    width: 75px;
+    height: 75px;
+    border-radius: 18px;
+}
+
+.lab-side-choices .choice-bubble img {
+    width: 85%;
+    height: 85%;
+}
+
+.mixer-choices-wrap {
+    display: none;
+    /* Replaced by side choices on desktop */
+}
+
+
+.choice-bubble {
+    width: 85px;
+    height: 85px;
+    background: #37474F;
+    border-radius: 20px;
+    padding: 0.8rem;
+    border: 3px solid #455A64;
+    cursor: pointer;
+    transition: all 0.4s var(--spring);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.choice-bubble:hover {
+    transform: translateY(-8px) rotate(5deg);
+    border-color: var(--blue);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.choice-bubble.selected {
+    border-color: var(--blue-dark);
+    background: #E1F5FE;
+    transform: scale(0.9);
+}
+
+.choice-bubble.disabled-dupe {
+    opacity: 0.15;
+    pointer-events: none;
+    transform: scale(0.8);
+    filter: grayscale(1);
+    box-shadow: none;
+}
+
+.choice-bubble img {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+}
+
+/* Fusion Result Modal (Inline) */
+.fusion-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.95);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.fusion-overlay.active {
+    display: flex;
+    animation: fadeIn 0.4s ease forwards;
+}
+
+.fusion-content {
+    background: white;
+    border-radius: 40px;
+    padding: 2.5rem;
+    max-width: 450px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+    border: 6px solid #FFF176;
+}
+
+.fusion-result-img {
+    width: 180px;
+    height: 180px;
+    margin: 0 auto 1.5rem;
+    animation: bouncePop 0.8s var(--spring) forwards;
+}
+
+.fusion-btn {
+    margin-top: 1rem;
+    background: var(--pink);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 20px;
+    font-weight: 800;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+.pulse-button {
+    animation: pulseMix 1.5s infinite;
+}
+
+@keyframes pulseMix {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 128, 171, 0.4);
+    }
+
+    70% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 15px rgba(255, 128, 171, 0);
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 128, 171, 0);
+    }
+}
+
+@keyframes bouncePop {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Discovery Gallery */
+.mixer-discovery-section {
+    width: 100%;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.discovery-title {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--pink);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.mixer-discovery-grid-small {
+    margin-top: -0.2rem;
+    /* Even closer to the button */
+    width: 100%;
+    max-width: 480px;
+    z-index: 20;
+}
+
+.mixer-discovery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    width: 100%;
+    padding: 1.2rem;
+    border-radius: 20px;
+    background: rgba(176, 190, 197, 0.1);
+    border: 2px dashed #B0BEC5;
+}
+
+/* ============================================================ */
+/*  MOBILE SPECIFIC LAYOUT (PORTRAIT)                           */
+/* ============================================================ */
+
+@media (max-width: 768px) {
+    #screen-mood-mixer {
+        overflow-y: auto;
+        /* Allow scrolling if screen is very small */
+    }
+
+    .mood-mixer-container {
+        padding: 0.5rem;
+        justify-content: flex-start;
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .mixer-card {
+        padding: 1rem;
+        min-height: 0;
+        gap: 1.2rem;
+        border-radius: 30px;
+        width: 100%;
+        margin-top: 0;
+    }
+
+    .lab-main-area {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        padding: 0 0.5rem;
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    .side-left, .side-right { 
+        width: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .lab-flask-area {
+        margin-top: 1rem;
+        padding: 0;
+    }
+
+    .mixer-slots {
+        gap: 0.8rem;
+        transform: scale(0.85);
+        margin: 0.5rem 0;
+    }
+
+    .slot-container {
+        width: 80px;
+    }
+
+    .mixer-slot {
+        width: 100px;
+        height: 130px;
+    }
+
+    .flask-container {
+        border-width: 2px;
+    }
+
+    .slot-label {
+        font-size: 0.85rem;
+    }
+
+    .plus-symbol {
+        font-size: 1.8rem;
+    }
+
+    /* Transformation to 4 columns, 2 rows */
+    .choice-grid-2x4 {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0.8rem;
+        margin: 0 auto;
+        width: auto;
+    }
+
+    .lab-side-choices .choice-bubble {
+        width: 60px;
+        height: 60px;
+        border-radius: 14px;
+        padding: 0.5rem;
+    }
+
+    .side-label {
+        font-size: 1rem;
+        margin-bottom: 0.2rem;
+    }
+
+    .lab-controls {
+        margin-top: 0.5rem;
+    }
+
+    .btn-primary#btn-do-fusion {
+        width: 100%;
+        max-width: 320px;
+        padding: 0.8rem;
+        font-size: 1rem;
+    }
+
+    .mixer-discovery-grid-small {
+        margin-top: 1rem;
+        padding: 0 0.5rem;
+        width: 100%;
+    }
+
+    .mixer-discovery-grid {
+        padding: 0.8rem;
+        gap: 0.6rem;
+    }
+
+    /* Modals for Mobile */
+    .fusion-content {
+        padding: 1.5rem;
+        border-radius: 30px;
+        border-width: 4px;
+    }
+
+    .fusion-result-img {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 1rem;
+    }
+
+    .victory-content {
+        padding: 1.5rem;
+        width: 90%;
+    }
+
+    .victory-content h2 {
+        font-size: 2rem;
+    }
+
+    .victory-content p {
+        font-size: 1.1rem;
+    }
+}
+
+
+.discovery-slot.unlocked {
+    border-color: var(--slot-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.discovery-slot.unlocked:hover {
+    transform: translateY(-3px) rotate(5deg);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.discovery-slot.locked {
+    opacity: 0.4;
+    background: #f0f0f0;
+    border-style: dashed;
+}
+
+.discovery-slot img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.discovery-slot i {
+    color: #CCC;
+    width: 20px;
+    height: 20px;
+}
+
+/* Victory Banner */
+.fusion-victory-banner {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.victory-content {
+    background: white;
+    padding: 3rem;
+    border-radius: 40px;
+    text-align: center;
+    border: 8px solid var(--yellow);
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.3);
+    animation: bouncePop 0.8s var(--spring) forwards;
+}
+
+.victory-content h2 {
+    font-size: 3rem;
+    color: var(--pink-dark);
+    margin-bottom: 0.5rem;
+}
+
+.victory-content p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    opacity: 0.8;
+}
