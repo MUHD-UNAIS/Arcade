@@ -311,12 +311,14 @@ class AudioSynth {
 
   setMuted(muted) {
     this.muted = muted;
+    console.log("AudioSynth.setMuted called with:", muted, "ctx:", !!this.ctx, "masterGain:", !!this.masterGain);
     if (!this.ctx || !this.masterGain) return;
     const now = this.ctx.currentTime;
     try {
       this.masterGain.gain.cancelScheduledValues(now);
       this.masterGain.gain.setValueAtTime(muted ? 0 : 0.8, now);
       this.masterGain.gain.value = muted ? 0 : 0.8;
+      console.log("AudioSynth masterGain.gain set to:", this.masterGain.gain.value);
     } catch (e) {
       console.error("AudioSynth error setting masterGain.gain:", e);
       try {

@@ -17,12 +17,6 @@ export default function LoadingScreen() {
   const [show, setShow] = useState(true);
   const [tipIndex, setTipIndex] = useState(0);
 
-  // Never block the game indefinitely if a 3D asset fails to report progress.
-  useEffect(() => {
-    const fallbackTimer = setTimeout(() => setShow(false), 8000);
-    return () => clearTimeout(fallbackTimer);
-  }, []);
-
   // Rotate tips every 2.5 seconds
   useEffect(() => {
     if (!show) return;
@@ -34,7 +28,7 @@ export default function LoadingScreen() {
 
   // Hide the loader once everything is loaded
   useEffect(() => {
-    if (!active && progress >= 100) {
+    if (!active && progress === 100) {
       setShow(false);
     }
   }, [active, progress]);
